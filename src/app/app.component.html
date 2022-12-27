@@ -1,16 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projeto Pub</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
-  <body>
-    
-    <router-outlet></router-outlet>
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto Pub</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <mat-toolbar style="background-color: #84bfc3; height: 15%;">
+    <mat-toolbar-row>
+        <img src="https://www.svgrepo.com/show/268716/pub.svg" style="height: 70px; margin: 3% 0 0 5%"/>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav opened="true" mode="side" style="background-color:#84bfc3; width: 15%; padding-top: 2%; border-top: 1.5px solid black; border-right: 2px solid black; text-align: center; font-size: 23px; font-family: 'Times New Roman', Times, serif">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item routerLink="/agendamentos">Agendamentos</a>
+        <a mat-list-item routerLink="/bebidas">Bebidas</a>
+        <a mat-list-item routerLink="/comidas">Comidas</a>
+        <a mat-list-item routerLink="/eventos">Eventos</a>
+        <a mat-list-item routerLink="/funcionarios">Funcionários</a>
+        <a mat-list-item routerLink="/fornecedores">Fornecedores</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="background-color: white">
+      <div style="height: 85vh; padding-left: 100px;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
