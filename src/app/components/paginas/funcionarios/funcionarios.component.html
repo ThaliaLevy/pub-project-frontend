@@ -1,1 +1,8 @@
-<p>funcionarios works!</p>
+<div *ngFor="let funcionario of todosOsFuncionarios">
+    <p><img src="{{funcionario.foto}}" style="height: 100px"></p>
+    <p>{{funcionario.nome}}</p>
+    <p>{{funcionario.cargo}}</p>
+    <button routerLink="/">Editar</button>
+    <button>Excluir</button>
+    <hr>
+</div>
