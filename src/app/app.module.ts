@@ -18,6 +18,7 @@ import { BebidasComponent } from './components/paginas/bebidas/bebidas.component
 import { ComidasComponent } from './components/paginas/comidas/comidas.component';
 import { FornecedoresComponent } from './components/paginas/fornecedores/fornecedores.component';
 import { FuncionariosComponent } from './components/paginas/funcionarios/funcionarios.component';
+import { EditarFuncionariosComponent } from './components/editar/editar-funcionarios/editar-funcionarios.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FuncionariosComponent } from './components/paginas/funcionarios/funcion
     BebidasComponent,
     ComidasComponent,
     FornecedoresComponent,
-    FuncionariosComponent
+    FuncionariosComponent,
+    EditarFuncionariosComponent
   ],
   imports: [
     BrowserModule,

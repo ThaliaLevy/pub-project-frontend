@@ -18,5 +18,8 @@ export class FuncionariosService {
     return this.http.get<Funcionario[]>(this.apiUrl);
   }
 
- 
+  deleteFuncionario(_id: string) {
+    const url = `${this.apiUrl}/${_id}`
+    return this.http.delete(url);
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Funcionario } from 'src/app/Funcionario';
+import { Router } from '@angular/router';
 
+import { Funcionario } from 'src/app/Funcionario';
 import { FuncionariosService } from 'src/app/services/funcionarios.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { FuncionariosService } from 'src/app/services/funcionarios.service';
   styleUrls: ['./funcionarios.component.css']
 })
 export class FuncionariosComponent {
-  constructor(private funcionarioService: FuncionariosService) { }
+  constructor(
+    private funcionarioService: FuncionariosService,
+    private router: Router
+    ) { }
 
   todosOsFuncionarios: Funcionario[] = [];
 
@@ -17,5 +21,11 @@ export class FuncionariosComponent {
     this.funcionarioService.getFuncionarios().subscribe((funcionariosDB) => {
       this.todosOsFuncionarios = funcionariosDB;
     })
+  }
+
+  async excluirFuncionario(_id: string) {
+    await this.funcionarioService.deleteFuncionario(_id).subscribe();
+
+    window.location.reload();
   }
 }
