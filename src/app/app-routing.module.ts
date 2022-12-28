@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EditarFuncionariosComponent } from './components/editar/editar-funcionarios/editar-funcionarios.component';
+import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
 import { HomeComponent } from './components/home/home.component';
 import { AgendamentosComponent } from './components/paginas/agendamentos/agendamentos.component';
 import { BebidasComponent } from './components/paginas/bebidas/bebidas.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'comidas', component: ComidasComponent},
   {path: 'fornecedores', component: FornecedoresComponent},
   {path: 'funcionarios', component: FuncionariosComponent},
-  {path: 'funcionarios/editar/:_id', component: EditarFuncionariosComponent}
+  {path: 'funcionarios/editar/:_id', component: EditarFuncionariosComponent},
+  {path: 'funcionarios/editar-foto/:_id', component: FotoFuncionarioComponent}
 ];
 
 @NgModule({

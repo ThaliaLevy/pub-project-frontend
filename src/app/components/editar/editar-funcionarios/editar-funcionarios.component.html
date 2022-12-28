@@ -1,1 +1,6 @@
-<p>editar-funcionarios works!</p>
+<div *ngIf="funcionario">
+    <h2>
+        Editando <span>{{funcionario.nome}}</span>
+    </h2>
+    <app-formulario-funcionario [funcionarioData]="funcionario" [btnText]="btnText"></app-formulario-funcionario>
+</div>

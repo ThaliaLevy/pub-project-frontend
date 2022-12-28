@@ -2,10 +2,10 @@ export interface Funcionario {
     _id: string;
     nome: string;
     foto: string;
-    idade: number;
+    idade: string;
     cargo: string;
     naturalidade: string;
-    anoAdmissao: number;
+    anoAdmissao: string;
     hobbie: string;
     isActive: string;
     dataCriacao: number;

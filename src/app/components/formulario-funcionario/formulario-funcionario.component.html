@@ -1,0 +1,56 @@
+<form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
+    <input type="hidden" formControlName="_id"> 
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" placeholder="Coloque um título" formControlName="nome" required>
+        <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="nome.errors?.['required']">O título é obrigatório!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cargo">Cargo:</label>
+        <textarea type="text" placeholder="O que aconteceu lá?" formControlName="cargo" required></textarea>
+        <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="cargo.errors?.['required']">O cargo é obrigatório!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="idade">Idade:</label>
+        <input type="text" placeholder="Coloque uma idade" formControlName="idade" required>
+        <div *ngIf="idade.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="idade.errors?.['required']">A idade é obrigatória!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="naturalidade">Naturalidade:</label>
+        <textarea type="text" placeholder="Informe a naturalidade" formControlName="naturalidade" required></textarea>
+        <div *ngIf="naturalidade.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="naturalidade.errors?.['required']">A naturalidade é obrigatória!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="anoAdmissao">Ano admissão:</label>
+        <input type="text" placeholder="Informe o ano de admissão" formControlName="anoAdmissao" required>
+        <div *ngIf="anoAdmissao.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="anoAdmissao.errors?.['required']">O ano de admissão é obrigatório!</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hobbie">Hobbie:</label>
+        <textarea type="text" placeholder="Informe um hobbie" formControlName="hobbie" required></textarea>
+        <div *ngIf="hobbie.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="hobbie.errors?.['required']">O hobbie é obrigatório!</p>
+        </div>
+    </div>
+  <!--  <div class="form-group">
+        <label for="foto">Coloque a foto que mais marcou:</label>
+        <input type="file" class="sr-only" id="input" name="image" accept="image/*">
+        <input id="teste" type="file" (change)="onFileSelected($event)">
+    </div>
+    <div class="form-group">
+        <p><img formControlName="foto" style="height: 100px"></p> 
+        <label for="foto">Coloque a foto que mais marcou:</label>
+        <input   formControlName="foto" type="file" (change)="onFileSelected($event)">
+    </div>-->
+    <input type="submit" value="{{btnText}}"> 
+</form>

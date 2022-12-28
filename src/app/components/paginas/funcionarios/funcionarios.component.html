@@ -1,7 +1,8 @@
 <div *ngFor="let funcionario of todosOsFuncionarios">
-    <p><img src="{{funcionario.foto}}" style="height: 100px"></p>
+    <p><img [src]="funcionario.foto" style="height: 100px"></p>
     <p>{{funcionario.nome}}</p>
     <p>{{funcionario.cargo}}</p>
+    <button routerLink="/funcionarios/editar-foto/{{funcionario._id}}">Alterar foto</button>
     <button routerLink="/funcionarios/editar/{{funcionario._id}}">Editar</button>
     <button (click)="excluirFuncionario(funcionario._id)">Excluir</button>
     <hr>

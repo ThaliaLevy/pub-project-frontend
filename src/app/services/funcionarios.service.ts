@@ -18,8 +18,19 @@ export class FuncionariosService {
     return this.http.get<Funcionario[]>(this.apiUrl);
   }
 
+  getFuncionario(id: string): Observable<Funcionario> {
+    const url = `${this.apiUrl}/${id}`
+    return this.http.get<Funcionario>(url);
+  }
+
   deleteFuncionario(_id: string) {
     const url = `${this.apiUrl}/${_id}`
     return this.http.delete(url);
+  }
+
+  updateFuncionario(_id: string, formData: FormData): Observable<FormData>{
+    console.log(formData)
+    const url = `${this.apiUrl}/${_id}`
+    return this.http.put<any>(url, formData);
   }
 }

@@ -1,0 +1,8 @@
+<form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
+    <input type="hidden" formControlName="_id"> 
+    <div class="form-group">
+        <label for="foto">Selecione a nova foto:</label><br>
+        <input type="file" (change)="onFileSelected($event)">
+    </div>
+    <input type="submit" value="Salvar"> 
+</form>

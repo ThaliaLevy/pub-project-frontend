@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventosComponent } from './components/paginas/eventos/eventos.component';
@@ -19,6 +18,10 @@ import { ComidasComponent } from './components/paginas/comidas/comidas.component
 import { FornecedoresComponent } from './components/paginas/fornecedores/fornecedores.component';
 import { FuncionariosComponent } from './components/paginas/funcionarios/funcionarios.component';
 import { EditarFuncionariosComponent } from './components/editar/editar-funcionarios/editar-funcionarios.component';
+import { CadastrarFuncionarioComponent } from './components/cadastrar/cadastrar-funcionario/cadastrar-funcionario.component';
+import { FormularioFuncionarioComponent } from './components/formulario-funcionario/formulario-funcionario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { EditarFuncionariosComponent } from './components/editar/editar-funciona
     ComidasComponent,
     FornecedoresComponent,
     FuncionariosComponent,
-    EditarFuncionariosComponent
+    EditarFuncionariosComponent,
+    CadastrarFuncionarioComponent,
+    FormularioFuncionarioComponent,
+    FotoFuncionarioComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,9 @@ import { EditarFuncionariosComponent } from './components/editar/editar-funciona
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
