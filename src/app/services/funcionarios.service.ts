@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { environment } from '../environment/environment'; 
+import { environment } from '../environment/environment';
 import { Funcionario } from '../Funcionario';
 
 @Injectable({
@@ -28,9 +28,12 @@ export class FuncionariosService {
     return this.http.delete(url);
   }
 
-  updateFuncionario(_id: string, formData: FormData): Observable<FormData>{
-    console.log(formData)
+  updateFuncionario(_id: string, formData: FormData): Observable<FormData> {
     const url = `${this.apiUrl}/${_id}`
     return this.http.put<any>(url, formData);
+  }
+
+  createFuncionario(formData: FormData): Observable<FormData> {
+    return this.http.post<FormData>(this.apiUrl, formData);
   }
 }

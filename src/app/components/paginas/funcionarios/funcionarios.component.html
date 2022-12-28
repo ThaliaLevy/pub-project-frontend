@@ -1,9 +1,14 @@
+<div><button routerLink="/funcionarios/cadastrar">Cadastrar funcionário</button></div>
 <div *ngFor="let funcionario of todosOsFuncionarios">
-    <p><img [src]="funcionario.foto" style="height: 100px"></p>
+    
+    <mat-card style="color: black">Ola</mat-card>
+
+
+    <p><img [src]="funcionario.foto"></p>
     <p>{{funcionario.nome}}</p>
     <p>{{funcionario.cargo}}</p>
     <button routerLink="/funcionarios/editar-foto/{{funcionario._id}}">Alterar foto</button>
     <button routerLink="/funcionarios/editar/{{funcionario._id}}">Editar</button>
-    <button (click)="excluirFuncionario(funcionario._id)">Excluir</button>
+    <button (click)="excluirFuncionario(funcionario._id!)">Excluir</button>
     <hr>
 </div>

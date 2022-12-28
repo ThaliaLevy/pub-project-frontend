@@ -29,9 +29,6 @@ export class FotoFuncionarioComponent {
       _id: new FormControl(this.funcionarioData ? this.funcionarioData._id : ''),
       foto: new FormControl('')
     });
-
-
-    //console.log(this.funcionarioForm)
   }
 
   imageShow: any = '';
@@ -51,11 +48,10 @@ export class FotoFuncionarioComponent {
     if (this.funcionarioForm.invalid) {
       return;
     }
-    console.log('aqui')
-    //console.log(this.funcionarioForm)
+
     const _id = String(this.route.snapshot.paramMap.get('_id'));
     this.funcionariosService.updateFuncionario(_id, this.funcionarioForm.value).subscribe();
 
-    // this.router.navigate(['/funcionarios']);
+    this.router.navigate(['/funcionarios']);
   }
 }

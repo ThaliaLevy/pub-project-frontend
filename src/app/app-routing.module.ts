@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarFuncionarioComponent } from './components/cadastrar/cadastrar-funcionario/cadastrar-funcionario.component';
 import { EditarFuncionariosComponent } from './components/editar/editar-funcionarios/editar-funcionarios.component';
 import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'fornecedores', component: FornecedoresComponent},
   {path: 'funcionarios', component: FuncionariosComponent},
   {path: 'funcionarios/editar/:_id', component: EditarFuncionariosComponent},
-  {path: 'funcionarios/editar-foto/:_id', component: FotoFuncionarioComponent}
+  {path: 'funcionarios/editar-foto/:_id', component: FotoFuncionarioComponent},
+  {path: 'funcionarios/cadastrar', component: CadastrarFuncionarioComponent}
 ];
 
 @NgModule({

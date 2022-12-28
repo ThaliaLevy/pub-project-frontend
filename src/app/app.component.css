@@ -1,0 +1,33 @@
+body {
+    font-family: monospace
+}
+
+mat-toolbar {
+    background-color: #84bfc3;
+    height: 15%
+}
+
+mat-sidenav {
+    background-color: #84bfc3;
+    width: 15%;
+    padding-top: 2%;
+    border-top: 1.5px solid black;
+    border-right: 2px solid black;
+    text-align: center;
+    font-size: 20px;
+}
+
+mat-sidenav-content {
+    background-color: #000511;
+}
+
+#logo {
+    height: 60px;
+    margin: 3% 0 0 5%
+}
+
+#conteudoPagina {
+    height: 85vh; 
+    padding-left: 100px;
+    color: white;
+}
