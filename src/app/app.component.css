@@ -1,33 +1,33 @@
-body {
-    font-family: monospace
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.836);
 }
 
 mat-toolbar {
-    background-color: #84bfc3;
-    height: 15%
+    background-image: linear-gradient(to right, #4e1f2b, #140408);
+    height: 13%
 }
 
 mat-sidenav {
-    background-color: #84bfc3;
-    width: 15%;
+    background-color: #4e1f2b;
+    width: 19%;
     padding-top: 2%;
-    border-top: 1.5px solid black;
-    border-right: 2px solid black;
+    border-top: 1px solid #4e1f2b;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 mat-sidenav-content {
-    background-color: #000511;
+    background-color: #140408;
 }
 
 #logo {
-    height: 60px;
-    margin: 3% 0 0 5%
+    height: 80px;
+    margin: 10px 0 0 6%;
 }
 
 #conteudoPagina {
     height: 85vh; 
-    padding-left: 100px;
-    color: white;
 }
+

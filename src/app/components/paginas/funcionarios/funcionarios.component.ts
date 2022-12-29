@@ -13,9 +13,10 @@ export class FuncionariosComponent {
   constructor(
     private funcionarioService: FuncionariosService,
     private router: Router
-    ) { }
+  ) { }
 
   todosOsFuncionarios: Funcionario[] = [];
+  value = '';
 
   ngOnInit(): void {
     this.funcionarioService.getFuncionarios().subscribe((funcionariosDB) => {
