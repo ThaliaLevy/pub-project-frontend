@@ -10,3 +10,16 @@ p, a {
     font-family: 'Inconsolata', monospace;
     color: rgb(255, 255, 255);
 }
+
+.container {
+    background: linear-gradient(132.97deg, rgba(255, 255, 255, 0.192) 2.84%, rgba(243, 243, 243, 0.03) 99.04%);
+    opacity: 1;
+    backdrop-filter: blur(4.5px);
+    border-radius: 20px;
+    height: 100px;
+    color: white;
+}
+
+.body {
+    height: 100%;
+}

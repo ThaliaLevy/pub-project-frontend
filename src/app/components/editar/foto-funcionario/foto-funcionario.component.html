@@ -1,8 +1,17 @@
+<div class="container">
+    <h4>
+            EDIÇÃO DA FOTO DO(A) FUNCIONÁRIO(A)
+    </h4>
+</div>
+
+
 <form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
     <input type="hidden" formControlName="_id"> 
     <div class="form-group">
-        <label for="foto">Selecione a nova foto:</label><br>
+        <label for="foto">Selecione a nova foto:</label>
+        <br><br>
         <input type="file" (change)="onFileSelected($event)">
     </div>
-    <input type="submit" value="Salvar"> 
+    <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar edição"> 
+    <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/funcionarios" value="Cancelar">
 </form>

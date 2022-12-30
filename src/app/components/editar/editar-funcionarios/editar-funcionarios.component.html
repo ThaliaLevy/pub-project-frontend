@@ -1,6 +1,7 @@
-<div *ngIf="funcionario">
-    <h2>
-        Editando <span>{{funcionario.nome}}</span>
-    </h2>
-    <app-formulario-funcionario [funcionarioData]="funcionario" [btnText]="btnText"></app-formulario-funcionario>
+<div class="container">
+    <h4>
+        EDIÇÃO DO FORMULÁRIO DO(A) FUNCIONÁRIO(A): <span>{{funcionario.nome}}</span>
+    </h4>
 </div>
+
+<app-formulario-funcionario [funcionarioData]="funcionario" [btnText]="btnText"></app-formulario-funcionario>

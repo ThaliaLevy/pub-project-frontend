@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
 a {
     text-decoration: none;
@@ -6,7 +10,7 @@ a {
 
 mat-toolbar {
     background-image: linear-gradient(to right, #4e1f2b, #140408);
-    height: 13%
+    height: 13%;
 }
 
 mat-sidenav {
@@ -20,6 +24,7 @@ mat-sidenav {
 
 mat-sidenav-content {
     background-color: #140408;
+    padding: 5px;
 }
 
 #logo {
@@ -28,6 +33,6 @@ mat-sidenav-content {
 }
 
 #conteudoPagina {
-    height: 85vh; 
+    height: 85vh;
 }
 

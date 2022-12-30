@@ -1,6 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Funcionario } from 'src/app/Funcionario';

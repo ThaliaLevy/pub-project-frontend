@@ -1,41 +1,47 @@
-<div class="container">
-    <h2><b>FUNCIONÁRIOS</b></h2>
-    <div id="ajusteEspacoMenuSuperior">
-        <button class="btn btn-outline-info btnMenuSuperior" routerLink="/funcionarios/cadastrar">Cadastrar
-            funcionário</button> <br>
-        <div class="row">
-            <mat-form-field id="inputFiltro">
-                <mat-label>Insira um dado para buscar</mat-label>
-                <input matInput type="text" [(ngModel)]="value">
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                    <mat-icon>close</mat-icon>
-                </button>
-            </mat-form-field>
-            <button class="btn btn-outline-info btnMenuSuperior">Buscar</button>
-        </div>
+<div class="body">
+    <div class="container">
+        <h3>FUNCIONÁRIOS</h3>
     </div>
-</div>
-<div class="d-flex align-content-stretch flex-wrap">
-    <span *ngFor="let funcionario of todosOsFuncionarios">
-        <mat-card>
-            <mat-card-content>
-                <p><img [src]="funcionario.foto"> <br></p>
-                <p id="dadosFuncionario">
-                    {{funcionario.nome}} <br>
-                    Cargo: {{funcionario.cargo}} <br>
-                    Idade: {{funcionario.idade}} <br>
-                    Naturalidade: {{funcionario.naturalidade}} <br>
-                    Hobbie: {{funcionario.hobbie}} <br>
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button class="btn btn-outline-info" routerLink="/funcionarios/editar-foto/{{funcionario._id}}">Alterar
-                    foto</button> <br>
-                <button class="btn btn-outline-info"
-                    routerLink="/funcionarios/editar/{{funcionario._id}}">Editar</button> <br>
-                <button class="btn btn-outline-danger" (click)="excluirFuncionario(funcionario._id!)">Excluir</button>
-                <br>
-            </mat-card-actions>
-        </mat-card>
-    </span>
+    <div class="row">
+        <button class="btn btn-outline-info btnMenuSuperior" routerLink="/funcionarios/cadastrar">
+            Cadastrar funcionário(a)
+        </button>
+        <mat-form-field id="inputFiltro">
+            <mat-label>Busque um(a) fucionário(a) pelo nome</mat-label>
+            <input id="matInput" matInput type="text" [(ngModel)]="value" (input)="search($event)">
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div *ngIf="funcionariosFiltrados.length > 0; else semFuncionarios" class="d-flex align-content-stretch flex-wrap">
+        <span *ngFor="let funcionario of funcionariosFiltrados">
+            <mat-card>
+                <mat-card-content>
+                    <p><img [src]="funcionario.foto"> </p>
+                    <p>
+                        <b>{{funcionario.nome}}</b> <br>
+                        Cargo: {{funcionario.cargo}} <br>
+                        Idade: {{funcionario.idade}} <br>
+                        Naturalidade: {{funcionario.naturalidade}} <br>
+                        Ano admissão: {{funcionario.anoAdmissao}} <br>
+                        Hobbie: {{funcionario.hobbie}} <br>
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="btn btn-outline-info"
+                        routerLink="/funcionarios/editar-foto/{{funcionario._id}}">Alterar
+                        foto</button> <br>
+                    <button class="btn btn-outline-info"
+                        routerLink="/funcionarios/editar/{{funcionario._id}}">Editar</button> <br>
+                    <button class="btn btn-outline-danger"
+                        (click)="excluirFuncionario(funcionario._id!)">Excluir</button>
+                    <br>
+                </mat-card-actions>
+            </mat-card>
+        </span>
+    </div>
+    <ng-template #semFuncionarios>
+        <h4 class="alert alert-danger" role="alert">Não há funcionários cadastrados.</h4>
+    </ng-template>
 </div>

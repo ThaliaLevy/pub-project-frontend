@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { Funcionario } from 'src/app/Funcionario';
 import { FuncionariosService } from 'src/app/services/funcionarios.service';
@@ -12,14 +11,15 @@ import { FuncionariosService } from 'src/app/services/funcionarios.service';
 export class FuncionariosComponent {
   constructor(
     private funcionarioService: FuncionariosService,
-    private router: Router
   ) { }
 
   todosOsFuncionarios: Funcionario[] = [];
+  funcionariosFiltrados: Funcionario[] = [];
   value = '';
 
   ngOnInit(): void {
     this.funcionarioService.getFuncionarios().subscribe((funcionariosDB) => {
+      this.funcionariosFiltrados = funcionariosDB;
       this.todosOsFuncionarios = funcionariosDB;
     })
   }
@@ -28,5 +28,13 @@ export class FuncionariosComponent {
     await this.funcionarioService.deleteFuncionario(_id).subscribe();
 
     window.location.reload();
+  }
+
+  search(e: Event): void {
+    const target = e.target as HTMLInputElement;
+    const value = target.value;
+    
+    this.funcionariosFiltrados = this.todosOsFuncionarios.filter((funcionario) =>
+      funcionario.nome.toLowerCase().includes(value));
   }
 }

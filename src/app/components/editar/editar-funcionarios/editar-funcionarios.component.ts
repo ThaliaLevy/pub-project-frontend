@@ -12,7 +12,7 @@ import { FuncionariosService } from 'src/app/services/funcionarios.service';
 
 export class EditarFuncionariosComponent {
   funcionario!: Funcionario;
-  btnText: string = 'Editar';
+  btnText: string = 'Salvar edição';
 
   constructor(
     private funcionariosService: FuncionariosService,
