@@ -1,43 +1,48 @@
 <div class="body">
     <form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
         <input type="hidden" formControlName="_id">
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="nome">Nome:</mat-label>
-                <input matInput type="text" formControlName="nome" required>
-            </mat-form-field>
-            <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+        <div class="row">
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="nome">Nome:</mat-label>
+                    <input matInput type="text" formControlName="nome" required>
+                </mat-form-field>
+                <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="cargo">Cargo:</mat-label>
+                    <input matInput type="text" formControlName="cargo" required>
+                </mat-form-field>
+                <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="cargo.errors?.['required']">O cargo é obrigatório!</p>
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="cargo">Cargo:</mat-label>
-                <input matInput type="text" formControlName="cargo" required>
-            </mat-form-field>
-            <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="cargo.errors?.['required']">O cargo é obrigatório!</p>
+        <div class="row">
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="idade">Idade:</mat-label>
+                    <input matInput type="text" formControlName="idade" required>
+                </mat-form-field>
+                <div *ngIf="idade.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="idade.errors?.['required']">A idade é obrigatória!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="naturalidade">Naturalidade:</mat-label>
+                    <input matInput type="text" formControlName="naturalidade" required>
+                </mat-form-field>
+                <div *ngIf="naturalidade.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="naturalidade.errors?.['required']">A naturalidade é obrigatória!</p>
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="idade">Idade:</mat-label>
-                <input matInput type="text" formControlName="idade" required>
-            </mat-form-field>
-            <div *ngIf="idade.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="idade.errors?.['required']">A idade é obrigatória!</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="naturalidade">Naturalidade:</mat-label>
-                <input matInput type="text" formControlName="naturalidade" required>
-            </mat-form-field>
-            <div *ngIf="naturalidade.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="naturalidade.errors?.['required']">A naturalidade é obrigatória!</p>
-            </div>
-        </div>
-        <div class="form-group">
+        <div class="row">
+        <div class="col-sm">
             <mat-form-field>
                 <mat-label for="anoAdmissao">Ano admissão:</mat-label>
                 <input matInput type="text" formControlName="anoAdmissao" required>
@@ -46,7 +51,7 @@
                 <p *ngIf="anoAdmissao.errors?.['required']">O ano de admissão é obrigatório!</p>
             </div>
         </div>
-        <div class="form-group">
+        <div class="col-sm">
             <mat-form-field>
                 <mat-label for="hobbie">Hobbie:</mat-label>
                 <input matInput type="text" formControlName="hobbie" required>
@@ -55,7 +60,8 @@
                 <p *ngIf="hobbie.errors?.['required']">O hobbie é obrigatório!</p>
             </div>
         </div>
-        <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="{{btnText}}">
-        <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/funcionarios" value="Cancelar">
-    </form>
+</div>
+<input class="btn btn-outline-danger" id="btnOpcao" routerLink="/funcionarios" value="Cancelar">
+<input class="btn btn-outline-info" id="btnOpcao" type="submit" value="{{btnText}}">
+</form>
 </div>

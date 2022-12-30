@@ -4,18 +4,21 @@ mat-label {
 
 mat-form-field {
     height: 80px;
-    width: 500px;
+    width: 300px;
 }
 
 form {
-    text-align: center;
+    width: 650px;
     font-family: Arial;
-    margin-top: 20px;
+    margin-top: 10%;
+    margin-left: 20%;
+    text-align: end;
 }
 
 #btnOpcao {
     width: 110px;
     height: 45px;
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 13px;
+    margin-left: 2%;
+    margin-top: 10px;
 }

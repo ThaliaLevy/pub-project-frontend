@@ -1,5 +1,5 @@
 <div class="body">
-    <div class="container">
+    <div class="tituloPagina">
         <h3>FUNCIONÁRIOS</h3>
     </div>
     <div class="row">
@@ -18,7 +18,15 @@
         <span *ngFor="let funcionario of funcionariosFiltrados">
             <mat-card>
                 <mat-card-content>
-                    <p><img [src]="funcionario.foto"> </p>
+                    <p *ngIf="funcionario.foto != ''; else semFoto">
+                        <img [src]="funcionario.foto">
+                    </p>
+                    <p>
+                        <ng-template #semFoto>
+                            <img src="https://www.documentodoestudante.com.br/assets/img/avatar.png">
+                        </ng-template>
+                    </p>
+
                     <p>
                         <b>{{funcionario.nome}}</b> <br>
                         Cargo: {{funcionario.cargo}} <br>

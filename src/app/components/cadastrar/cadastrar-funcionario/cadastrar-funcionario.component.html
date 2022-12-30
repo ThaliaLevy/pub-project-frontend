@@ -1,68 +1,70 @@
 <div class="body">
-    <div class="container">
+    <div class="tituloPagina">
         <h4>CADASTRO DE FUNCIONÁRIO(A)</h4>
     </div>
     <form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="nome">Nome:</mat-label>
-                <input matInput type="text" formControlName="nome" required>
-            </mat-form-field>
-            <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+        <div class="row">
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="nome">Nome:</mat-label>
+                    <input matInput type="text" formControlName="nome" required>
+                </mat-form-field>
+                <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="cargo">Cargo:</mat-label>
+                    <input matInput type="text" formControlName="cargo" required>
+                </mat-form-field>
+                <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="cargo.errors?.['required']">O cargo é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="idade">Idade:</mat-label>
+                    <input matInput type="text" formControlName="idade" required>
+                </mat-form-field>
+                <div *ngIf="idade.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="idade.errors?.['required']">A idade é obrigatória!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="naturalidade">Naturalidade:</mat-label>
+                    <input matInput type="text" formControlName="naturalidade" required>
+                </mat-form-field>
+                <div *ngIf="naturalidade.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="naturalidade.errors?.['required']">A naturalidade é obrigatória!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="anoAdmissao">Ano admissão:</mat-label>
+                    <input matInput type="text" formControlName="anoAdmissao" required>
+                </mat-form-field>
+                <div *ngIf="anoAdmissao.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="anoAdmissao.errors?.['required']">O ano de admissão é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="hobbie">Hobbie:</mat-label>
+                    <input matInput type="text" formControlName="hobbie" required>
+                </mat-form-field>
+                <div *ngIf="hobbie.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="hobbie.errors?.['required']">O hobbie é obrigatório!</p>
+                </div>
+            </div>
+            <div id="uploadFoto" class="form-group">
+                <label for="image">Selecione uma foto:</label>
+                <br>
+                <input type="file" (change)="onFileSelected($event)">
             </div>
         </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="cargo">Cargo:</mat-label>
-                <input matInput type="text" formControlName="cargo" required>
-            </mat-form-field>
-            <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="cargo.errors?.['required']">O cargo é obrigatório!</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="idade">Idade:</mat-label>
-                <input matInput type="text" formControlName="idade" required>
-            </mat-form-field>
-            <div *ngIf="idade.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="idade.errors?.['required']">A idade é obrigatória!</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="naturalidade">Naturalidade:</mat-label>
-                <input matInput type="text" formControlName="naturalidade" required>
-            </mat-form-field>
-            <div *ngIf="naturalidade.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="naturalidade.errors?.['required']">A naturalidade é obrigatória!</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="anoAdmissao">Ano admissão:</mat-label>
-                <input matInput type="text" formControlName="anoAdmissao" required>
-            </mat-form-field>
-            <div *ngIf="anoAdmissao.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="anoAdmissao.errors?.['required']">O ano de admissão é obrigatório!</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label for="hobbie">Hobbie:</mat-label>
-                <input matInput type="text" formControlName="hobbie" required>
-            </mat-form-field>
-            <div *ngIf="hobbie.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="hobbie.errors?.['required']">O hobbie é obrigatório!</p>
-            </div>
-        </div>
-        <div id="uploadFoto" class="form-group">
-            <label for="image">Selecione uma foto:</label>
-            <br>
-            <input type="file" (change)="onFileSelected($event)">
-        </div>
-        <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar">
         <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/funcionarios" value="Cancelar">
+        <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar">
     </form>
 </div>

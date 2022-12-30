@@ -1,25 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
 
 html,
-body {
+body, .body {
     height: 100%;
 }
 
-p, a {
+p,
+a {
     margin: 0;
     font-family: 'Inconsolata', monospace;
     color: rgb(255, 255, 255);
 }
 
-.container {
-    background: linear-gradient(132.97deg, rgba(255, 255, 255, 0.192) 2.84%, rgba(243, 243, 243, 0.03) 99.04%);
-    opacity: 1;
-    backdrop-filter: blur(4.5px);
-    border-radius: 20px;
-    height: 100px;
-    color: white;
+.tituloPagina {
+    -webkit-animation: cores 6s linear infinite;
+    -moz-animation: cores 6s linear infinite;
+    -o-animation: cores 6s linear infinite;
+    animation: cores 6s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding-top: 40px;
 }
 
-.body {
-    height: 100%;
+/*CHROME*/
+@-webkit-keyframes cores {
+    30% {
+        background-color: #00eeff;
+    }
+
+    60% {
+        background-color: rgb(199, 3, 3);
+    }
+
+    90% {
+        background-color: #e4e28e;
+    }
+}
+
+/*FIREFOX*/
+@-moz-keyframes cores {
+    10% {
+        background-color: #00eeff77;
+    }
+
+    30% {
+        background-color: #00eeff;
+    }
+
+    50% {
+        background-color: rgba(199, 3, 3, 0.473);
+    }
+
+    60% {
+        background-color: rgb(199, 3, 3);
+    }
+
+    100% {
+        background-color: #e4e38e8e;
+    }
+
+    100% {
+        background-color: #e4e28e;
+    }
+}
+
+/* OPERA */
+@-o-keyframes cores {
+    30% {
+        background-color: #00eeff;
+    }
+
+    60% {
+        background-color: rgb(199, 3, 3);
+    }
+
+    90% {
+        background-color: #e4e28e;
+    }
+}
+
+/* IE */
+@keyframes cores {
+    0% {
+        background-color: rgb(255, 255, 255);
+    }
+
+    20% {
+        
+        background-color: #00eeff;
+    }
+
+    40% {
+        background-color: #e4e28e;
+    }
+
+    60% {
+        background-color: rgba(199, 3, 3, 0.801);
+    }
+
+    80% {
+        background-color: #00eeff;
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
 }
