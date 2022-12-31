@@ -18,12 +18,12 @@ a:hover, .active {
 mat-toolbar {
     background: linear-gradient(to right, #140408, #220d14, #1d0d11f3);
     border-bottom: 1px solid #00eeff;
-    height: 76px;
+    height: 77px;
 }
 
 mat-sidenav {
     width: 250px;
-    padding-top: 8%;
+    padding-top: 6%;
     border-right: 1px solid #00eeff;
     text-align: center;
     font-size: 22px;
@@ -47,4 +47,10 @@ mat-sidenav-content {
 #conteudoPagina {
     height: 85vh;
     overflow-x: hidden;
+}
+
+#iconeEnfeite {
+    position: absolute;
+    height: 60px;
+    margin: -30px;
 }
