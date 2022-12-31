@@ -29,6 +29,10 @@ import { CadastrarBebidasComponent } from './components/cadastrar/cadastrar-bebi
 import { EditarBebidasComponent } from './components/editar/editar-bebidas/editar-bebidas.component';
 import { FotoBebidasComponent } from './components/editar/foto-bebidas/foto-bebidas.component';
 import { FormularioBebidasComponent } from './components/formulario-bebida/formulario-bebidas.component';
+import { CadastrarComidasComponent } from './components/cadastrar/cadastrar-comidas/cadastrar-comidas.component';
+import { EditarComidasComponent } from './components/editar/editar-comidas/editar-comidas.component';
+import { FotoComidasComponent } from './components/editar/foto-comidas/foto-comidas.component';
+import { FormularioComidaComponent } from './components/formulario-comida/formulario-comida.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { FormularioBebidasComponent } from './components/formulario-bebida/formu
     CadastrarBebidasComponent,
     EditarBebidasComponent,
     FotoBebidasComponent,
-    FormularioBebidasComponent
+    FormularioBebidasComponent,
+    CadastrarComidasComponent,
+    EditarComidasComponent,
+    FotoComidasComponent,
+    FormularioComidaComponent
   ],
   imports: [
     BrowserModule,

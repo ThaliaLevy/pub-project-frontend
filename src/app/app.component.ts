@@ -100,13 +100,7 @@ export class AppComponent {
           }
             break;
         }
-
-
-        //el!.classList.remove('');
-        //el!.classList.add('testando');
       }
     });
   }
-
-
 }

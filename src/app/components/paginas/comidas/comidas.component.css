@@ -1,0 +1,78 @@
+mat-card {
+    width: 250px;
+    height: 350px;
+    padding: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: linear-gradient(132.97deg, rgba(255, 255, 255, 0.192) 2.84%, rgba(243, 243, 243, 0.03) 99.04%);
+    opacity: 1;
+    backdrop-filter: blur(4.5px);
+    border-radius: 20px;
+    font-size: 14px;
+    scroll-behavior: auto;
+}
+
+mat-card-actions {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    background: linear-gradient(45deg, rgb(199, 3, 3), #e4e28e, #00eeff) border-box;
+}
+
+button {
+    width: 60px;
+    height: 45px;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bolder;
+    padding-top: 40px
+}
+
+h4 {
+    background-color: rgba(255, 255, 255, 0.144);
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    color: white;
+    width: 200px;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+#inputFiltro {
+    width: 500px;
+    margin-left: 4px;
+    font-size: 14px;
+}
+
+.row {
+    margin-left: 210px;
+    margin-top: 20px;
+}
+
+.btnMenuSuperior {
+    width: 175px;
+    height: 57px;
+    font-size: 14px;
+}
+
+.d-flex {
+    margin-left: 30px;
+}
+
+.overflow-auto {
+    height: 90px;
+    margin-top: -13px;
+}

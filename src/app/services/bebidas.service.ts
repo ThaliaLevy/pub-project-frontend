@@ -11,7 +11,6 @@ import { Bebida } from '../Bebida';
 export class BebidasService {
   private baseApiUrl = environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}bebidas`
-
  
   constructor(private http: HttpClient) { }
 

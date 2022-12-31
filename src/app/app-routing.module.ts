@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarBebidasComponent } from './components/cadastrar/cadastrar-bebidas/cadastrar-bebidas.component';
+import { CadastrarComidasComponent } from './components/cadastrar/cadastrar-comidas/cadastrar-comidas.component';
 import { CadastrarFuncionarioComponent } from './components/cadastrar/cadastrar-funcionario/cadastrar-funcionario.component';
 import { EditarBebidasComponent } from './components/editar/editar-bebidas/editar-bebidas.component';
+import { EditarComidasComponent } from './components/editar/editar-comidas/editar-comidas.component';
 import { EditarFuncionariosComponent } from './components/editar/editar-funcionarios/editar-funcionarios.component';
 import { FotoBebidasComponent } from './components/editar/foto-bebidas/foto-bebidas.component';
+import { FotoComidasComponent } from './components/editar/foto-comidas/foto-comidas.component';
 import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
 import { HomeComponent } from './components/home/home.component';
 import { AgendamentosComponent } from './components/paginas/agendamentos/agendamentos.component';
@@ -23,6 +26,9 @@ const routes: Routes = [
   {path: 'bebidas/editar-foto/:_id', component: FotoBebidasComponent},
   {path: 'bebidas/cadastrar', component: CadastrarBebidasComponent},
   {path: 'comidas', component: ComidasComponent},
+  {path: 'comidas/editar/:_id', component: EditarComidasComponent},
+  {path: 'comidas/editar-foto/:_id', component: FotoComidasComponent},
+  {path: 'comidas/cadastrar', component: CadastrarComidasComponent},
   {path: 'fornecedores', component: FornecedoresComponent},
   {path: 'funcionarios', component: FuncionariosComponent},
   {path: 'funcionarios/editar/:_id', component: EditarFuncionariosComponent},
