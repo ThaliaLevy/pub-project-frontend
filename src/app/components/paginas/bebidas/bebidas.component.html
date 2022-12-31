@@ -1,1 +1,44 @@
-<p>bebidas works!</p>
+<div class="tituloPagina">
+    <h3>BEBIDAS</h3>
+</div>
+<div class="row">
+    <button class="btn btn-outline-info btnMenuSuperior" routerLink="/bebidas/cadastrar">
+        Cadastrar bebida
+    </button>
+    <mat-form-field id="inputFiltro">
+        <mat-label>Busque uma bebida</mat-label>
+        <input id="matInput" matInput type="text" [(ngModel)]="value" (input)="search($event)">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div *ngIf="bebidasFiltradas.length > 0; else semBebidas" class="d-flex align-content-stretch flex-wrap">
+    <span *ngFor="let bebida of bebidasFiltradas">
+        <mat-card>
+            <mat-card-content>
+                <p *ngIf="bebida.foto != ''; else semFoto">
+                    <img [src]="bebida.foto">
+                </p>
+                <p>
+                    <ng-template #semFoto>
+                        <img src="https://www.documentodoestudante.com.br/assets/img/avatar.png">
+                    </ng-template>
+                </p>
+                <p>
+                    <b>{{bebida.nome}}</b> <br>
+                    Preço: {{bebida.preco}} reais <br>
+                </p>
+                <p class="overflow-auto"> Descrição: {{bebida.descricao}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="btn btn-outline-info" routerLink="/bebidas/editar-foto/{{bebida._id}}">Alterar foto</button> <br>
+                <button class="btn btn-outline-info" routerLink="/bebidas/editar/{{bebida._id}}">Editar</button> <br>
+                <button class="btn btn-outline-danger" (click)="excluirBebida(bebida._id!)">Excluir</button> <br>
+            </mat-card-actions>
+        </mat-card>
+    </span>
+</div>
+<ng-template #semBebidas>
+    <h4 class="alert alert-danger" role="alert">Não há bebidas cadastradas.</h4>
+</ng-template>

@@ -1,8 +1,3 @@
-body {
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
 a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.836);
@@ -21,7 +16,7 @@ a:hover, .active {
 }
 
 mat-toolbar {
-    background: linear-gradient(to right, #140408, #13070b, #1d0d11f3);
+    background: linear-gradient(to right, #140408, #220d14, #1d0d11f3);
     border-bottom: 1px solid #00eeff;
     height: 76px;
 }
@@ -32,11 +27,12 @@ mat-sidenav {
     border-right: 1px solid #00eeff;
     text-align: center;
     font-size: 22px;
-    background: linear-gradient(170.97deg, #140409 25%, #14080bf3 99.04%);
+    background: linear-gradient(170.97deg, #140409 25%, #241116f3 99.04%);
     backdrop-filter: blur(4.5px);
 }
 
 mat-sidenav-content {
+    height: 1000px;
     background-color: #140409;
     padding: 5px;
 }
@@ -50,4 +46,5 @@ mat-sidenav-content {
 
 #conteudoPagina {
     height: 85vh;
+    overflow-x: hidden;
 }

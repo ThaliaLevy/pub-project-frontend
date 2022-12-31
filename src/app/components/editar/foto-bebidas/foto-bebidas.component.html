@@ -1,16 +1,16 @@
 <div class="tituloPagina">
     <h4>
-        EDIÇÃO DA FOTO DO(A) FUNCIONÁRIO(A)
+        EDIÇÃO DA BEBIDA
     </h4>
 </div>
 
-<form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
+<form (ngSubmit)="submit()" [formGroup]="bebidaForm" #formDir="ngForm">
     <input type="hidden" formControlName="_id">
     <div class="form-group">
         <label for="foto">Selecione a nova foto:</label>
         <br><br>
         <input type="file" (change)="onFileSelected($event)">
     </div>
-    <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/funcionarios" value="Cancelar">
+    <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/bebidas" value="Cancelar">
     <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar edição">
 </form>

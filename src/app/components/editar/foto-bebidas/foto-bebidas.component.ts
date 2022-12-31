@@ -2,31 +2,31 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Funcionario } from 'src/app/Funcionario';
-import { FuncionariosService } from 'src/app/services/funcionarios.service';
+import { Bebida } from 'src/app/Bebida';
+import { BebidasService } from 'src/app/services/bebidas.service';
 
 @Component({
-  selector: 'app-foto-funcionario',
-  templateUrl: './foto-funcionario.component.html',
-  styleUrls: ['./foto-funcionario.component.css']
+  selector: 'app-foto-bebidas',
+  templateUrl: './foto-bebidas.component.html',
+  styleUrls: ['./foto-bebidas.component.css']
 })
-export class FotoFuncionarioComponent {
+export class FotoBebidasComponent {
   @Input() btnText!: string;
-  @Input() funcionarioData: Funcionario | null = null;
+  @Input() bebidaData: Bebida | null = null;
 
   constructor(
-    private funcionariosService: FuncionariosService,
+    private bebidasService: BebidasService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
-  funcionarioForm!: FormGroup;
+  bebidaForm!: FormGroup;
 
   ngOnInit(): void {
     const _id = String(this.route.snapshot.paramMap.get('_id'));
 
-    this.funcionarioForm = new FormGroup({
-      _id: new FormControl(this.funcionarioData ? this.funcionarioData._id : ''),
+    this.bebidaForm = new FormGroup({
+      _id: new FormControl(this.bebidaData ? this.bebidaData._id : ''),
       foto: new FormControl('')
     });
   }
@@ -39,19 +39,19 @@ export class FotoFuncionarioComponent {
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (event) => {
         this.imageShow = (<FileReader>event.target).result;
-        this.funcionarioForm.patchValue({ foto: this.imageShow });
+        this.bebidaForm.patchValue({ foto: this.imageShow });
       }
     }
   }
 
   submit() {
-    if (this.funcionarioForm.invalid) {
+    if (this.bebidaForm.invalid) {
       return;
     }
 
     const _id = String(this.route.snapshot.paramMap.get('_id'));
-    this.funcionariosService.updateFuncionario(_id, this.funcionarioForm.value).subscribe();
+    this.bebidasService.updateBebida(_id, this.bebidaForm.value).subscribe();
 
-    this.router.navigate(['/funcionarios']);
+    this.router.navigate(['/bebidas']);
   }
 }

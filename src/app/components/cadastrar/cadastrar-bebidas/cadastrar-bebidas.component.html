@@ -1,0 +1,41 @@
+<div class="tituloPagina">
+    <h4>CADASTRO DE BEBIDA</h4>
+</div>
+<form (ngSubmit)="submit()" [formGroup]="bebidaForm" #formDir="ngForm">
+    <div class="row">
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-label for="nome">Nome:</mat-label>
+                <input matInput type="text" formControlName="nome" required>
+            </mat-form-field>
+            <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+            </div>
+        </div>
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-label for="preco">Preço (em reais):</mat-label>
+                <input matInput type="text" formControlName="preco" required>
+            </mat-form-field>
+            <div *ngIf="preco.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="preco.errors?.['required']">O preço é obrigatório!</p>
+            </div>
+        </div>
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-label for="descricao">Descrição:</mat-label>
+                <textarea matInput type="text" formControlName="descricao" required></textarea>
+            </mat-form-field>
+            <div *ngIf="descricao.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="descricao.errors?.['required']">A descrição é obrigatória!</p>
+            </div>
+        </div>
+        <div id="uploadFoto" class="form-group">
+            <label for="image">Selecione uma foto:</label>
+            <br>
+            <input type="file" (change)="onFileSelected($event)">
+        </div>
+    </div>
+    <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/bebidas" value="Cancelar">
+    <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar">
+</form>

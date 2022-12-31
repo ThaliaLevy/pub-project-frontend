@@ -11,5 +11,4 @@ export class EventosService {
   private baseApiUrl = environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}eventos`
 
-  constructor() { }
 }

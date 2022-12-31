@@ -25,6 +25,10 @@ import { CadastrarFuncionarioComponent } from './components/cadastrar/cadastrar-
 import { FormularioFuncionarioComponent } from './components/formulario-funcionario/formulario-funcionario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
+import { CadastrarBebidasComponent } from './components/cadastrar/cadastrar-bebidas/cadastrar-bebidas.component';
+import { EditarBebidasComponent } from './components/editar/editar-bebidas/editar-bebidas.component';
+import { FotoBebidasComponent } from './components/editar/foto-bebidas/foto-bebidas.component';
+import { FormularioBebidasComponent } from './components/formulario-bebida/formulario-bebidas.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/f
     EditarFuncionariosComponent,
     CadastrarFuncionarioComponent,
     FormularioFuncionarioComponent,
-    FotoFuncionarioComponent
+    FotoFuncionarioComponent,
+    CadastrarBebidasComponent,
+    EditarBebidasComponent,
+    FotoBebidasComponent,
+    FormularioBebidasComponent
   ],
   imports: [
     BrowserModule,

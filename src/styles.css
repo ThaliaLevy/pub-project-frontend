@@ -1,8 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body, .body {
-    height: 100%;
+body, html {
+    overflow: hidden;
 }
 
 p,
@@ -26,58 +23,85 @@ a {
 
 /*CHROME*/
 @-webkit-keyframes cores {
-    30% {
+    0% {
+        background-color: rgb(255, 255, 255);
+    }
+
+    20% {
+        
         background-color: #00eeff;
     }
 
-    60% {
-        background-color: rgb(199, 3, 3);
+    40% {
+        background-color: #e4e28e;
     }
 
-    90% {
-        background-color: #e4e28e;
+    60% {
+        background-color: rgba(199, 3, 3, 0.801);
+    }
+
+    80% {
+        background-color: #00eeff;
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
     }
 }
 
 /*FIREFOX*/
 @-moz-keyframes cores {
-    10% {
-        background-color: #00eeff77;
+    0% {
+        background-color: rgb(255, 255, 255);
     }
 
-    30% {
+    20% {
+        
         background-color: #00eeff;
     }
 
-    50% {
-        background-color: rgba(199, 3, 3, 0.473);
+    40% {
+        background-color: #e4e28e;
     }
 
     60% {
-        background-color: rgb(199, 3, 3);
+        background-color: rgba(199, 3, 3, 0.801);
+    }
+
+    80% {
+        background-color: #00eeff;
     }
 
     100% {
-        background-color: #e4e38e8e;
-    }
-
-    100% {
-        background-color: #e4e28e;
+        background-color: rgb(255, 255, 255);
     }
 }
 
 /* OPERA */
 @-o-keyframes cores {
-    30% {
+    0% {
+        background-color: rgb(255, 255, 255);
+    }
+
+    20% {
+        
         background-color: #00eeff;
     }
 
-    60% {
-        background-color: rgb(199, 3, 3);
+    40% {
+        background-color: #e4e28e;
     }
 
-    90% {
-        background-color: #e4e28e;
+    60% {
+        background-color: rgba(199, 3, 3, 0.801);
+    }
+
+    80% {
+        background-color: #00eeff;
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
     }
 }
 
