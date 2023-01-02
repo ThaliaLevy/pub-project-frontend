@@ -64,6 +64,6 @@ export class FormularioFuncionarioComponent {
 
     this.funcionariosService.updateFuncionario(this.funcionarioData!._id!, this.funcionarioForm.value).subscribe();
 
-    this.router.navigate(['/funcionarios']);
+    location.replace('/funcionarios');
   }
 }

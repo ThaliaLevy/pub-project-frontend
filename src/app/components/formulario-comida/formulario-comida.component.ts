@@ -49,6 +49,6 @@ export class FormularioComidaComponent {
 
     this.comidasService.updateComida(this.comidaData!._id!, this.comidaForm.value).subscribe();
 
-    this.router.navigate(['/comidas']);
+    location.replace('/comidas');
   }
 }

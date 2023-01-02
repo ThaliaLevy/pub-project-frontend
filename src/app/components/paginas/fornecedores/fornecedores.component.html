@@ -1,1 +1,44 @@
-<p>fornecedores works!</p>
+<div class="tituloPagina">
+    <h3>FORNECEDORES</h3>
+</div>
+<div class="row">
+    <button class="btn btn-outline-info btnMenuSuperior" routerLink="/fornecedores/cadastrar">
+        Cadastrar fornecedor
+    </button>
+    <mat-form-field id="inputFiltro">
+        <mat-label>Busque um fornecedor</mat-label>
+        <input id="matInput" matInput type="text" [(ngModel)]="value" (input)="search($event)">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div *ngIf="fornecedoresFiltrados.length > 0; else semFornecedores" class="d-flex align-content-stretch flex-wrap">
+    <span *ngFor="let fornecedor of fornecedoresFiltrados">
+        <mat-card>
+            <mat-card-content>
+                <p *ngIf="fornecedor.foto != ''; else semFoto">
+                    <img [src]="fornecedor.foto">
+                </p>
+                <p>
+                    <ng-template #semFoto>
+                        <img src="https://www.documentodoestudante.com.br/assets/img/avatar.png">
+                    </ng-template>
+                </p>
+
+                <p><b>{{fornecedor.nome}}</b></p> <br>
+                <p class="overflow-auto">Descrição: {{fornecedor.descricao}}</p> <br>
+                
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="btn btn-outline-info" routerLink="/fornecedores/editar-foto/{{fornecedor._id}}">Alterar foto</button> <br>
+                <button class="btn btn-outline-info" routerLink="/fornecedores/editar/{{fornecedor._id}}">Editar</button> <br>
+                <button class="btn btn-outline-danger" (click)="excluirFornecedor(fornecedor._id!)">Excluir</button>
+                <br>
+            </mat-card-actions>
+        </mat-card>
+    </span>
+</div>
+<ng-template #semFornecedores>
+    <h4 class="alert alert-danger" role="alert">Não há fornecedores cadastrados.</h4>
+</ng-template>

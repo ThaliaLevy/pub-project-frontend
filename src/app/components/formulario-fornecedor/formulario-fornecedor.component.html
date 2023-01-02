@@ -1,0 +1,25 @@
+<form (ngSubmit)="submit()" [formGroup]="fornecedorForm" #formDir="ngForm">
+    <input type="hidden" formControlName="_id">
+    <div class="row">
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-label for="nome">Nome:</mat-label>
+                <input matInput type="text" formControlName="nome" required>
+            </mat-form-field>
+            <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+            </div>
+        </div>
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-label for="descricao">Descrição:</mat-label>
+                <input matInput type="text" formControlName="descricao" required>
+            </mat-form-field>
+            <div *ngIf="descricao.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="descricao.errors?.['required']">A descrição é obrigatória!</p>
+            </div>
+        </div>
+    </div>
+    <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/fornecedores" value="Cancelar">
+    <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="{{btnText}}">
+</form>

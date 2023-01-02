@@ -2,30 +2,29 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Comida } from 'src/app/Comida';
-import { ComidasService } from 'src/app/services/comidas.service';
+import { Fornecedor } from 'src/app/Fornecedor';
+import { FornecedoresService } from 'src/app/services/fornecedores.service';
 
 @Component({
-  selector: 'app-cadastrar-comidas',
-  templateUrl: './cadastrar-comidas.component.html',
-  styleUrls: ['./cadastrar-comidas.component.css']
+  selector: 'app-cadastrar-fornecedores',
+  templateUrl: './cadastrar-fornecedores.component.html',
+  styleUrls: ['./cadastrar-fornecedores.component.css']
 })
-export class CadastrarComidasComponent {
-  @Input() comidaData: Comida | null = null;
+export class CadastrarFornecedoresComponent {
+  @Input() fornecedorData: Fornecedor | null = null;
 
   tamanhoExcedido: string = '';
 
   constructor(
-    private comidasService: ComidasService,
+    private fornecedoresService: FornecedoresService,
     private router: Router
   ) { }
 
-  comidaForm!: FormGroup;
+  fornecedorForm!: FormGroup;
 
   ngOnInit(): void {
-    this.comidaForm = new FormGroup({
+    this.fornecedorForm = new FormGroup({
       nome: new FormControl('', [Validators.required]),
-      preco: new FormControl('', [Validators.required]),
       descricao: new FormControl('', [Validators.required]),
       foto: new FormControl('', [Validators.required])
     });
@@ -46,31 +45,27 @@ export class CadastrarComidasComponent {
         reader.readAsDataURL(event.target.files[0]);
         reader.onload = (event) => {
           this.imageShow = (<FileReader>event.target).result;
-          this.comidaForm.patchValue({ foto: this.imageShow });
+          this.fornecedorForm.patchValue({ foto: this.imageShow });
         }
       }
     }
   }
 
   get nome() {
-    return this.comidaForm.get('nome')!;
-  }
-
-  get preco() {
-    return this.comidaForm.get('preco')!;
+    return this.fornecedorForm.get('nome')!;
   }
 
   get descricao() {
-    return this.comidaForm.get('descricao')!;
+    return this.fornecedorForm.get('descricao')!;
   }
 
   submit() {
-    if (this.comidaForm.invalid) {
+    if (this.fornecedorForm.invalid || this.tamanhoExcedido.length > 0) {
       return;
     }
 
-    this.comidasService.createComida(this.comidaForm.value).subscribe();
+    this.fornecedoresService.createFornecedor(this.fornecedorForm.value).subscribe();
 
-    location.replace('/comidas');
+    location.replace('/fornecedores');
   }
 }

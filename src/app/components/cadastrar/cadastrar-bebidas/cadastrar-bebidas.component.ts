@@ -13,6 +13,8 @@ import { BebidasService } from 'src/app/services/bebidas.service';
 export class CadastrarBebidasComponent {
   @Input() bebidaData: Bebida | null = null;
 
+  tamanhoExcedido: string = '';
+
   constructor(
     private bebidasService: BebidasService,
     private router: Router
@@ -33,11 +35,19 @@ export class CadastrarBebidasComponent {
   onFileSelected(event: any) {
     if (event.target.files && event.target.files[0]) {
       const foto = event.target.files[0]
-      var reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
-      reader.onload = (event) => {
-        this.imageShow = (<FileReader>event.target).result;
-        this.bebidaForm.patchValue({ foto: this.imageShow });
+
+      if (foto.size > 100000) {
+        this.tamanhoExcedido = 'Tamanho de imagem excedido (Máximo: 100kB).';
+        console.log(foto.size)
+      } else {
+        this.tamanhoExcedido = '';
+
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = (event) => {
+          this.imageShow = (<FileReader>event.target).result;
+          this.bebidaForm.patchValue({ foto: this.imageShow });
+        }
       }
     }
   }
@@ -61,7 +71,7 @@ export class CadastrarBebidasComponent {
 
     this.bebidasService.createBebida(this.bebidaForm.value).subscribe();
 
-    this.router.navigate(['/bebidas']);
+    location.replace('/bebidas');
   }
 }
 

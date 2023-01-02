@@ -1,6 +1,6 @@
 <div class="tituloPagina">
     <h4>
-        EDIÇÃO DA COMIDA
+        EDIÇÃO DA FOTO DA COMIDA
     </h4>
 </div>
 
@@ -9,7 +9,8 @@
     <div class="form-group">
         <label for="foto">Selecione a nova foto:</label>
         <br><br>
-        <input type="file" (change)="onFileSelected($event)">
+        <p><input type="file" (change)="onFileSelected($event)"></p>
+        <p *ngIf="tamanhoExcedido.length > 0"> {{tamanhoExcedido}} </p>
     </div>
     <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/comidas" value="Cancelar">
     <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar edição">

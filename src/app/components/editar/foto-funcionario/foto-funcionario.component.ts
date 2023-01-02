@@ -13,6 +13,8 @@ import { FuncionariosService } from 'src/app/services/funcionarios.service';
 export class FotoFuncionarioComponent {
   @Input() btnText!: string;
   @Input() funcionarioData: Funcionario | null = null;
+  
+  tamanhoExcedido: string = '';
 
   constructor(
     private funcionariosService: FuncionariosService,
@@ -35,11 +37,19 @@ export class FotoFuncionarioComponent {
   onFileSelected(event: any) {
     if (event.target.files && event.target.files[0]) {
       const foto = event.target.files[0]
-      var reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
-      reader.onload = (event) => {
-        this.imageShow = (<FileReader>event.target).result;
-        this.funcionarioForm.patchValue({ foto: this.imageShow });
+
+      if (foto.size > 100000) {
+        this.tamanhoExcedido = 'Tamanho de imagem excedido (Máximo: 100kB).';
+        console.log(foto.size)
+      } else {
+        this.tamanhoExcedido = '';
+
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = (event) => {
+          this.imageShow = (<FileReader>event.target).result;
+          this.funcionarioForm.patchValue({ foto: this.imageShow });
+        }
       }
     }
   }
@@ -52,6 +62,6 @@ export class FotoFuncionarioComponent {
     const _id = String(this.route.snapshot.paramMap.get('_id'));
     this.funcionariosService.updateFuncionario(_id, this.funcionarioForm.value).subscribe();
 
-    this.router.navigate(['/funcionarios']);
+    location.replace('/funcionarios');
   }
 }

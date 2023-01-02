@@ -1,0 +1,24 @@
+mat-label {
+    font-family: Arial;
+}
+
+mat-form-field {
+    height: 80px;
+    width: 300px;
+}
+
+form {
+    width: 650px;
+    font-family: Arial;
+    margin-top: 10%;
+    margin-left: 20%;
+    text-align: end;
+}
+
+#btnOpcao {
+    width: 110px;
+    height: 45px;
+    font-size: 13px;
+    margin-left: 2%;
+    margin-top: 10px;
+}

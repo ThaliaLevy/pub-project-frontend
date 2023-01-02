@@ -2,33 +2,33 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Bebida } from 'src/app/Bebida';
-import { BebidasService } from 'src/app/services/bebidas.service';
+import { Fornecedor } from 'src/app/Fornecedor';
+import { FornecedoresService } from 'src/app/services/fornecedores.service';
 
 @Component({
-  selector: 'app-foto-bebidas',
-  templateUrl: './foto-bebidas.component.html',
-  styleUrls: ['./foto-bebidas.component.css']
+  selector: 'app-foto-fornecedores',
+  templateUrl: './foto-fornecedores.component.html',
+  styleUrls: ['./foto-fornecedores.component.css']
 })
-export class FotoBebidasComponent {
+export class FotoFornecedoresComponent {
   @Input() btnText!: string;
-  @Input() bebidaData: Bebida | null = null;
-  
+  @Input() fornecedorData: Fornecedor | null = null;
+
   tamanhoExcedido: string = '';
 
   constructor(
-    private bebidasService: BebidasService,
+    private fornecedoresService: FornecedoresService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
-  bebidaForm!: FormGroup;
+  fornecedorForm!: FormGroup;
 
   ngOnInit(): void {
     const _id = String(this.route.snapshot.paramMap.get('_id'));
 
-    this.bebidaForm = new FormGroup({
-      _id: new FormControl(this.bebidaData ? this.bebidaData._id : ''),
+    this.fornecedorForm = new FormGroup({
+      _id: new FormControl(this.fornecedorData ? this.fornecedorData._id : ''),
       foto: new FormControl('')
     });
   }
@@ -48,20 +48,20 @@ export class FotoBebidasComponent {
         reader.readAsDataURL(event.target.files[0]);
         reader.onload = (event) => {
           this.imageShow = (<FileReader>event.target).result;
-          this.bebidaForm.patchValue({ foto: this.imageShow });
+          this.fornecedorForm.patchValue({ foto: this.imageShow });
         }
       }
     }
   }
 
   submit() {
-    if (this.bebidaForm.invalid) {
+    if (this.fornecedorForm.invalid) {
       return;
     }
 
     const _id = String(this.route.snapshot.paramMap.get('_id'));
-    this.bebidasService.updateBebida(_id, this.bebidaForm.value).subscribe();
+    this.fornecedoresService.updateFornecedor(_id, this.fornecedorForm.value).subscribe();
 
-    location.replace('/bebidas');
+    location.replace('/fornecedores');
   }
 }

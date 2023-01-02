@@ -13,6 +13,8 @@ import { ComidasService } from 'src/app/services/comidas.service';
 export class FotoComidasComponent {
   @Input() btnText!: string;
   @Input() comidaData: Comida | null = null;
+  
+  tamanhoExcedido: string = '';
 
   constructor(
     private comidasService: ComidasService,
@@ -35,11 +37,19 @@ export class FotoComidasComponent {
   onFileSelected(event: any) {
     if (event.target.files && event.target.files[0]) {
       const foto = event.target.files[0]
-      var reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
-      reader.onload = (event) => {
-        this.imageShow = (<FileReader>event.target).result;
-        this.comidaForm.patchValue({ foto: this.imageShow });
+
+      if (foto.size > 100000) {
+        this.tamanhoExcedido = 'Tamanho de imagem excedido (Máximo: 100kB).';
+        console.log(foto.size)
+      } else {
+        this.tamanhoExcedido = '';
+
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = (event) => {
+          this.imageShow = (<FileReader>event.target).result;
+          this.comidaForm.patchValue({ foto: this.imageShow });
+        }
       }
     }
   }
@@ -52,6 +62,6 @@ export class FotoComidasComponent {
     const _id = String(this.route.snapshot.paramMap.get('_id'));
     this.comidasService.updateComida(_id, this.comidaForm.value).subscribe();
 
-    this.router.navigate(['/comidas']);
+    location.replace('/comidas');
   }
 }

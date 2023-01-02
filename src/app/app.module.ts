@@ -33,6 +33,10 @@ import { CadastrarComidasComponent } from './components/cadastrar/cadastrar-comi
 import { EditarComidasComponent } from './components/editar/editar-comidas/editar-comidas.component';
 import { FotoComidasComponent } from './components/editar/foto-comidas/foto-comidas.component';
 import { FormularioComidaComponent } from './components/formulario-comida/formulario-comida.component';
+import { FormularioFornecedorComponent } from './components/formulario-fornecedor/formulario-fornecedor.component';
+import { EditarFornecedoresComponent } from './components/editar/editar-fornecedores/editar-fornecedores.component';
+import { FotoFornecedoresComponent } from './components/editar/foto-fornecedores/foto-fornecedores.component';
+import { CadastrarFornecedoresComponent } from './components/cadastrar/cadastrar-fornecedores/cadastrar-fornecedores.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { FormularioComidaComponent } from './components/formulario-comida/formul
     CadastrarComidasComponent,
     EditarComidasComponent,
     FotoComidasComponent,
-    FormularioComidaComponent
+    FormularioComidaComponent,
+    FormularioFornecedorComponent,
+    EditarFornecedoresComponent,
+    FotoFornecedoresComponent,
+    CadastrarFornecedoresComponent
   ],
   imports: [
     BrowserModule,

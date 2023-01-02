@@ -1,0 +1,33 @@
+<div class="tituloPagina">
+    <h4>CADASTRO DE FORNECEDOR</h4>
+</div>
+<div class="d-flex justify-content-center">
+<form (ngSubmit)="submit()" [formGroup]="fornecedorForm" #formDir="ngForm">
+    <div class="row">
+        <mat-form-field>
+            <mat-label for="nome">Nome:</mat-label>
+            <input matInput type="text" formControlName="nome" required>
+        </mat-form-field>
+        <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+        </div>
+        <br>
+        <mat-form-field id="textarea">
+            <mat-label for="descricao">Descrição:</mat-label>
+            <textarea matInput type="text" formControlName="descricao" required></textarea>
+        </mat-form-field>
+        <div *ngIf="descricao.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="descricao.errors?.['required']">A descrição é obrigatória!</p>
+        </div>
+        <div id="uploadFoto" class="form-group">
+            <label for="image">Selecione uma foto:</label>
+            <br>
+            <p><input type="file" (change)="onFileSelected($event)"></p>
+            <p *ngIf="tamanhoExcedido.length > 0"> {{tamanhoExcedido}} </p>
+        </div>
+
+        <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/fornecedores" value="Cancelar">
+        <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar">
+    </div>
+</form>
+</div>

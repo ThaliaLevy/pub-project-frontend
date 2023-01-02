@@ -4,7 +4,7 @@ export interface Comida {
     foto: string;
     preco: string;
     descricao: string;
-    isActive: string;
-    dataCriacao: number;
-    dataAtualizacao: string;
+    isActive: Boolean; 
+    dataCriacao: Date;
+    dataAtualizacao: Date;
 }

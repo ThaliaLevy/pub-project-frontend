@@ -7,7 +7,7 @@ export interface Funcionario {
     naturalidade: string;
     anoAdmissao: string;
     hobbie: string;
-    isActive: string;
-    dataCriacao: number;
-    dataAtualizacao: string;
+    isActive: Boolean; 
+    dataCriacao: Date;
+    dataAtualizacao: Date;
 }

@@ -49,6 +49,6 @@ export class FormularioBebidasComponent {
 
     this.bebidasService.updateBebida(this.bebidaData!._id!, this.bebidaForm.value).subscribe();
 
-    this.router.navigate(['/bebidas']);
+    location.replace('/bebidas');
   }
 }
