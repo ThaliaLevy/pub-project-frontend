@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { Bebida } from 'src/app/Bebida';
 import { BebidasService } from 'src/app/services/bebidas.service';
@@ -17,7 +16,6 @@ export class CadastrarBebidasComponent {
 
   constructor(
     private bebidasService: BebidasService,
-    private router: Router
   ) { }
 
   bebidaForm!: FormGroup;

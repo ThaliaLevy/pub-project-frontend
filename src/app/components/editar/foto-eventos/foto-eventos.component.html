@@ -1,0 +1,17 @@
+<div class="tituloPagina">
+    <h4>
+        EDIÇÃO DA FOTO DO EVENTO
+    </h4>
+</div>
+
+<form (ngSubmit)="submit()" [formGroup]="eventoForm" #formDir="ngForm">
+    <input type="hidden" formControlName="_id">
+    <div class="form-group">
+        <label for="foto">Selecione a nova foto:</label>
+        <br><br>
+        <p><input type="file" (change)="onFileSelected($event)"></p>
+        <p *ngIf="tamanhoExcedido.length > 0"> {{tamanhoExcedido}} </p>
+    </div>
+    <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/eventos" value="Cancelar">
+    <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar edição">
+</form>

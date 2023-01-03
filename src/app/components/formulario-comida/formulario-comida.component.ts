@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { Comida } from 'src/app/Comida';
 import { ComidasService } from 'src/app/services/comidas.service';
@@ -16,7 +15,6 @@ export class FormularioComidaComponent {
 
   constructor(
     private comidasService: ComidasService,
-    private router: Router
   ) { }
 
   comidaForm!: FormGroup;

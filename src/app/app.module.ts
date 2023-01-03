@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +39,12 @@ import { FormularioFornecedorComponent } from './components/formulario-fornecedo
 import { EditarFornecedoresComponent } from './components/editar/editar-fornecedores/editar-fornecedores.component';
 import { FotoFornecedoresComponent } from './components/editar/foto-fornecedores/foto-fornecedores.component';
 import { CadastrarFornecedoresComponent } from './components/cadastrar/cadastrar-fornecedores/cadastrar-fornecedores.component';
+import { CadastrarEventosComponent } from './components/cadastrar/cadastrar-eventos/cadastrar-eventos.component';
+import { EditarEventosComponent } from './components/editar/editar-eventos/editar-eventos.component';
+import { FotoEventosComponent } from './components/editar/foto-eventos/foto-eventos.component';
+import { FormularioEventoComponent } from './components/formulario-evento/formulario-evento.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MAT_DATE_LOCALE} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -63,7 +71,11 @@ import { CadastrarFornecedoresComponent } from './components/cadastrar/cadastrar
     FormularioFornecedorComponent,
     EditarFornecedoresComponent,
     FotoFornecedoresComponent,
-    CadastrarFornecedoresComponent
+    CadastrarFornecedoresComponent,
+    CadastrarEventosComponent,
+    EditarEventosComponent,
+    FotoEventosComponent,
+    FormularioEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -79,9 +91,12 @@ import { CadastrarFornecedoresComponent } from './components/cadastrar/cadastrar
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'pt-br'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
