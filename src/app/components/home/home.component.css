@@ -1,5 +1,6 @@
 img {
-    height: 100px;
+    height: 60px;
+    margin-right: 15%;
 }
 
 h3 {
@@ -9,7 +10,7 @@ h3 {
 
 .container {
     text-align: right;
-    margin-top: 60px;
+    margin-top: 5%;
     width: 700px;
 }
  

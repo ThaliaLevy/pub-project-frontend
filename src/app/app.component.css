@@ -29,6 +29,7 @@ mat-sidenav {
     font-size: 22px;
     background: linear-gradient(170.97deg, #140409 25%, #241116f3 99.04%);
     backdrop-filter: blur(4.5px);
+    overflow-y: hidden;
 }
 
 mat-sidenav-content {
@@ -49,8 +50,17 @@ mat-sidenav-content {
     overflow-x: hidden;
 }
 
-#iconeEnfeite {
-    position: absolute;
-    height: 60px;
-    margin: -30px;
+#iconeLogin {
+    height: 50px;
+}
+
+#btnIconeLogin {
+    background-color: transparent;
+    border: 0;
+}
+
+.icones {
+    margin-top: 15px;
+    text-align: end;
+    width: 80%;
 }

@@ -11,6 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,8 +46,7 @@ import { CadastrarEventosComponent } from './components/cadastrar/cadastrar-even
 import { EditarEventosComponent } from './components/editar/editar-eventos/editar-eventos.component';
 import { FotoEventosComponent } from './components/editar/foto-eventos/foto-eventos.component';
 import { FormularioEventoComponent } from './components/formulario-evento/formulario-evento.component';
-import { MatNativeDateModule } from '@angular/material/core';
-import {MAT_DATE_LOCALE} from '@angular/material/core';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,8 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
     CadastrarEventosComponent,
     EditarEventosComponent,
     FotoEventosComponent,
-    FormularioEventoComponent
+    FormularioEventoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
     MatPaginatorModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'pt-br'}],
   bootstrap: [AppComponent]

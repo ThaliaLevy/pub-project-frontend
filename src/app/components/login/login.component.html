@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 mat-dialog-title>Já possui conta?</h1>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label for="email">E-mail:</mat-label>
+            <input matInput type="text" formControlName="email" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label for="senha">Senha:</mat-label>
+            <input matInput type="text" formControlName="senha" required>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="fecharModal()"><span>Login</span></button>
+    </div>
+    <hr>
+    <h1 mat-dialog-title>Se não possui conta</h1>
+    <div mat-dialog-actions>
+        <button mat-button (click)="fecharModal()"><span>Cadastre-se</span></button>
+    </div>
+</div>

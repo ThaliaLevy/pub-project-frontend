@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
-import { Router, NavigationStart, NavigationEnd, NavigationError, NavigationCancel, RoutesRecognized } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent {
   title = 'DesafioAngular';
   rota: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public dialog: MatDialog) {
     router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this.rota = this.router.url;
@@ -101,6 +103,17 @@ export class AppComponent {
             break;
         }
       }
+    });
+  }
+ 
+  abrirModal(): void {
+    const dialogRef = this.dialog.open(LoginComponent, {
+      height: '440px', width: '500px'
+    });
+    
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 }
