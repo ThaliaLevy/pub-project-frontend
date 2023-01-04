@@ -2,8 +2,8 @@ mat-card {
     width: 250px;
     height: 340px;
     padding: 2px;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
     background: linear-gradient(132.97deg, rgba(255, 255, 255, 0.192) 2.84%, rgba(243, 243, 243, 0.03) 99.04%);
     opacity: 1;
     backdrop-filter: blur(4.5px);
@@ -12,7 +12,7 @@ mat-card {
 }
 
 .d-flex {
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 img {
@@ -21,8 +21,8 @@ img {
     object-fit: cover;
     object-position: center;
     border-radius: 50px;
-    border: 3px solid transparent;
-    background: linear-gradient(45deg, rgb(199, 3, 3), #e4e28e, #00eeff) border-box;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, rgb(199, 3, 173), #c326f3, #00eeff) border-box;
 }
 
 button {

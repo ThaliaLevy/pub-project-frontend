@@ -18,12 +18,12 @@ a:hover, .active {
 mat-toolbar {
     background: linear-gradient(to right, #140408, #220d14, #1d0d11f3);
     border-bottom: 1px solid #00eeff;
-    height: 77px;
+    height: 55px;
 }
 
 mat-sidenav {
     width: 250px;
-    padding-top: 6%;
+    padding-top: 7%;
     border-right: 1px solid #00eeff;
     text-align: center;
     font-size: 22px;
@@ -40,9 +40,9 @@ mat-sidenav-content {
 
 #logo {
     z-index: 100;
-    height: 60px;
-    margin: 13px 0 0 60px;
-    border-radius: 60%;
+    height: 45px;
+    margin: 0 0 0 50px;
+   
 }
 
 #conteudoPagina {
@@ -51,7 +51,7 @@ mat-sidenav-content {
 }
 
 #iconeLogin {
-    height: 50px;
+    height: 40px;
 }
 
 #btnIconeLogin {
@@ -60,7 +60,7 @@ mat-sidenav-content {
 }
 
 .icones {
-    margin-top: 15px;
+    margin-top: 5px;
     text-align: end;
     width: 80%;
 }
