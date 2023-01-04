@@ -27,6 +27,7 @@ export class AppComponent {
         let eventos = document.querySelector('#eventos');
         let funcionarios = document.querySelector('#funcionarios');
         let fornecedores = document.querySelector('#fornecedores');
+        let usuarios = document.querySelector('#usuarios');
 
         switch (this.rota) {
           case '/': {
@@ -37,6 +38,7 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.classList.remove('active');
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/agendamentos': {
@@ -47,6 +49,7 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.classList.remove('active');
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/comidas': {
@@ -57,6 +60,7 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.classList.remove('active');
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/bebidas': {
@@ -67,6 +71,7 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.classList.remove('active');
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/eventos': {
@@ -77,6 +82,7 @@ export class AppComponent {
             eventos!.className = 'active';
             funcionarios!.classList.remove('active');
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/funcionarios': {
@@ -88,6 +94,7 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.className = 'active';
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/fornecedores': {
@@ -99,8 +106,21 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.classList.remove('active');
             fornecedores!.className = 'active';
+            usuarios!.classList.remove('active');
           }
             break;
+            case '/usuarios': {
+              home!.classList.remove('active');
+              funcionarios!.classList.remove('active');
+              agendamentos!.classList.remove('active');
+              comidas!.classList.remove('active');
+              bebidas!.classList.remove('active');
+              eventos!.classList.remove('active');
+              funcionarios!.classList.remove('active');
+              fornecedores!.classList.remove('active');
+              usuarios!.className = 'active';
+            }
+              break;
         }
       }
     });

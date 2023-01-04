@@ -1,0 +1,56 @@
+<div class="body">
+    <div class="tituloPagina">
+        <h4>CADASTRO DE USUÁRIO</h4>
+    </div>
+    <form (ngSubmit)="submit()" [formGroup]="usuarioForm" #formDir="ngForm">
+        <div class="row">
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="nome">Nome:</mat-label>
+                    <input matInput type="text" formControlName="nome" required>
+                </mat-form-field>
+                <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="nome.errors?.['required']">O nome é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="cpf">CPF:</mat-label>
+                    <input matInput type="text" formControlName="cpf" required>
+                </mat-form-field>
+                <div *ngIf="cpf.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="cpf.errors?.['required']">O cpf é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="telefone">Telefone:</mat-label>
+                    <input matInput type="tel" formControlName="telefone" required>
+                </mat-form-field>
+                <div *ngIf="telefone.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="telefone.errors?.['required']">O telefone é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="email">E-mail:</mat-label>
+                    <input matInput type="email" formControlName="email" required>
+                </mat-form-field>
+                <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="email.errors?.['required']">O email é obrigatório!</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <mat-form-field>
+                    <mat-label for="senha">Senha:</mat-label>
+                    <input matInput type="password" formControlName="senha" required>
+                </mat-form-field>
+                <div *ngIf="senha.invalid && formDir.submitted" class="validation-error">
+                    <p *ngIf="senha.errors?.['required']">A senha é obrigatória!</p>
+                </div>
+            </div>
+        </div>
+        <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/usuarios" value="Cancelar">
+        <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar">
+    </form>
+</div>

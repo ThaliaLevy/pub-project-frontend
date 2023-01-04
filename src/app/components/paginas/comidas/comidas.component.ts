@@ -24,6 +24,13 @@ export class ComidasComponent {
     })
   }
 
+  recarregarTodosOsUsuarios() {
+    this.comidaService.getComidas().subscribe((comidasDB) => {
+      this.comidasFiltradas = comidasDB;
+      this.todasAsComidas = comidasDB;
+    })
+  }
+
   async excluirComida(_id: string) {
     await this.comidaService.deleteComida(_id).subscribe();
 

@@ -47,6 +47,10 @@ import { EditarEventosComponent } from './components/editar/editar-eventos/edita
 import { FotoEventosComponent } from './components/editar/foto-eventos/foto-eventos.component';
 import { FormularioEventoComponent } from './components/formulario-evento/formulario-evento.component';
 import { LoginComponent } from './components/login/login.component';
+import { CadastrarUsuariosComponent } from './components/cadastrar/cadastrar-usuarios/cadastrar-usuarios.component';
+import { EditarUsuariosComponent } from './components/editar/editar-usuarios/editar-usuarios.component';
+import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
+import { UsuariosComponent } from './components/paginas/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +82,11 @@ import { LoginComponent } from './components/login/login.component';
     EditarEventosComponent,
     FotoEventosComponent,
     FormularioEventoComponent,
-    LoginComponent
+    LoginComponent,
+    CadastrarUsuariosComponent,
+    EditarUsuariosComponent,
+    FormularioUsuarioComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

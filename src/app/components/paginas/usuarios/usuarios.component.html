@@ -1,0 +1,37 @@
+<div class="tituloPagina">
+    <h3>USUÁRIOS</h3>
+</div>
+<div class="row">
+    <button class="btn btn-outline-info btnMenuSuperior" routerLink="/usuarios/cadastrar">
+        Cadastrar usuário
+    </button>
+    <mat-form-field id="inputFiltro">
+        <mat-label>Busque um usuário pelo nome</mat-label>
+        <input id="matInput" matInput type="text" [(ngModel)]="value" (input)="search($event)">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''" (click)="recarregarTodosOsUsuarios()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div *ngIf="usuariosFiltrados.length > 0; else semUsuarios" class="d-flex align-content-stretch flex-wrap">
+    <span *ngFor="let usuario of usuariosFiltrados">
+        <mat-card>
+            <mat-card-content>
+                <p>
+                    Nome: {{usuario.nome}} <br>
+                    CPF: {{usuario.cpf}} <br>
+                    Telefone: {{usuario.telefone}} <br>
+                    E-mail: {{usuario.email}} <br>
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="btn btn-outline-info" routerLink="/usuarios/editar/{{usuario._id}}">Editar</button> <br>
+                <button class="btn btn-outline-danger" (click)="excluirUsuario(usuario._id!)">Excluir</button>
+                <br>
+            </mat-card-actions>
+        </mat-card>
+    </span>
+</div>
+<ng-template #semUsuarios>
+    <h4 class="alert alert-danger" role="alert">Não há usuários cadastrados.</h4>
+</ng-template>

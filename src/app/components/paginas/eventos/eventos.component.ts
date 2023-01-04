@@ -24,6 +24,13 @@ export class EventosComponent {
     })
   }
 
+  recarregarTodosOsUsuarios() {
+    this.eventoService.getEventos().subscribe((eventosDB) => {
+      this.eventosFiltrados = eventosDB;
+      this.todosOsEventos = eventosDB;
+    })
+  }
+
   async excluirEvento(_id: string) {
     await this.eventoService.deleteEvento(_id).subscribe();
 

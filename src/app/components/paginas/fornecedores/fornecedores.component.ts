@@ -24,6 +24,13 @@ export class FornecedoresComponent {
     })
   }
 
+  recarregarTodosOsUsuarios() {
+    this.fornecedorService.getFornecedores().subscribe((fornecedoresDB) => {
+      this.fornecedoresFiltrados = fornecedoresDB;
+      this.todosOsFornecedores = fornecedoresDB;
+    })
+  }
+
   async excluirFornecedor(_id: string) {
     await this.fornecedorService.deleteFornecedor(_id).subscribe();
 

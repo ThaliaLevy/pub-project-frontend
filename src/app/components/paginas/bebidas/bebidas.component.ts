@@ -24,6 +24,13 @@ export class BebidasComponent {
     })
   }
 
+  recarregarTodosOsUsuarios() {
+    this.bebidaService.getBebidas().subscribe((bebidasDB) => {
+      this.bebidasFiltradas = bebidasDB;
+      this.todasAsBebidas = bebidasDB;
+    })
+  }
+
   async excluirBebida(_id: string) {
     await this.bebidaService.deleteBebida(_id).subscribe();
 

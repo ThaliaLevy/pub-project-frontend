@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { Funcionario } from 'src/app/Funcionario';
 import { FuncionariosService } from 'src/app/services/funcionarios.service';
@@ -17,7 +16,6 @@ export class CadastrarFuncionarioComponent {
 
   constructor(
     private funcionariosService: FuncionariosService,
-    private router: Router
   ) { }
 
   funcionarioForm!: FormGroup;

@@ -30,6 +30,13 @@ export class FuncionariosComponent {
     window.location.reload();
   }
 
+  recarregarTodosOsUsuarios() {
+    this.funcionarioService.getFuncionarios().subscribe((funcionariosDB) => {
+      this.funcionariosFiltrados = funcionariosDB;
+      this.todosOsFuncionarios = funcionariosDB;
+    })
+  }
+
   search(e: Event): void {
     const target = e.target as HTMLInputElement;
     const value = target.value;

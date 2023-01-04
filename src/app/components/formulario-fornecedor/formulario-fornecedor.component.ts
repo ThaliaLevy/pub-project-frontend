@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { Fornecedor } from 'src/app/Fornecedor';
 import { FornecedoresService } from 'src/app/services/fornecedores.service';
@@ -16,7 +15,6 @@ export class FormularioFornecedorComponent {
 
   constructor(
     private fornecedoresService: FornecedoresService,
-    private router: Router
   ) { }
 
   fornecedorForm!: FormGroup;
