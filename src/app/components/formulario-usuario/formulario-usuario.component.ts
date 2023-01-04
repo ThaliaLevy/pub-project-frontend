@@ -18,6 +18,7 @@ export class FormularioUsuarioComponent {
   ) { }
 
   usuarioForm!: FormGroup;
+  cpfInvalido: boolean = false;
 
   ngOnInit(): void {
     this.usuarioForm = new FormGroup({
@@ -45,13 +46,22 @@ export class FormularioUsuarioComponent {
     return this.usuarioForm.get('email')!;
   }
 
+  verificarCpf() {
+    if (this.usuarioForm.value.cpf.length != 11) {
+      console.log(this.usuarioForm.value.cpf.length)
+      this.cpfInvalido = true;
+    } else {
+      this.cpfInvalido = false;
+    }
+  }
+
   submit() {
-    if (this.usuarioForm.invalid) {
+    if (this.usuarioForm.invalid || this.usuarioForm.value.cpf.length != 11) {
       return;
     }
 
     this.usuariosService.updateUsuario(this.usuarioData!._id!, this.usuarioForm.value).subscribe();
 
-    location.replace('/usuarios');
+   // location.replace('/usuarios');
   }
 }

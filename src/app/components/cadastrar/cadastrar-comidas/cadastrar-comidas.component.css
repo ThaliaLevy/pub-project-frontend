@@ -19,7 +19,7 @@ h4 {
     font-family: 'Inconsolata', monospace;
 }
 
-#btnOpcao {
+.btnOpcao {
     width: 110px;
     height: 45px;
     font-size: 12px;

@@ -12,13 +12,12 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 export class CadastrarUsuariosComponent {
   @Input() usuarioData: Usuario | null = null;
 
-  tamanhoExcedido: string = '';
-
   constructor(
     private usuariosService: UsuariosService,
   ) { }
 
   usuarioForm!: FormGroup;
+  cpfInvalido: boolean = false;
 
   ngOnInit(): void {
     this.usuarioForm = new FormGroup({
@@ -50,8 +49,17 @@ export class CadastrarUsuariosComponent {
     return this.usuarioForm.get('senha')!;
   }
 
+  verificarCpf() {
+    if (this.usuarioForm.value.cpf.length != 11) {
+      console.log(this.usuarioForm.value.cpf.length)
+      this.cpfInvalido = true;
+    } else {
+      this.cpfInvalido = false;
+    }
+  }
+
   submit() {
-    if (this.usuarioForm.invalid) {
+    if (this.usuarioForm.invalid || this.usuarioForm.value.cpf.length != 11) {
       return;
     }
 

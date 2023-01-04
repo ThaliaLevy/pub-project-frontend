@@ -13,13 +13,6 @@ h4 {
     font-family: 'Inconsolata', monospace;
 }
 
-#btnOpcao {
-    width: 110px;
-    height: 45px;
-    font-size: 12px;
-    margin-left: 2%;
-    margin-bottom: 40px;
-}
 
 #uploadFoto {
     color: white;
@@ -27,6 +20,14 @@ h4 {
     margin-bottom: 50px;
     font-size: 18px;
     font-family: 'Inconsolata', monospace;
+}
+
+.btnOpcao {
+    width: 110px;
+    height: 45px;
+    font-size: 12px;
+    margin-left: 2%;
+    margin-bottom: 40px;
 }
 
 .row {

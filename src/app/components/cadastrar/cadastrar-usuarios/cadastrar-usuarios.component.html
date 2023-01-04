@@ -16,10 +16,11 @@
             <div class="col-sm">
                 <mat-form-field>
                     <mat-label for="cpf">CPF:</mat-label>
-                    <input matInput type="text" formControlName="cpf" required>
+                    <input matInput type="text" formControlName="cpf" required (keyup)="verificarCpf()">
                 </mat-form-field>
+                <p *ngIf="cpfInvalido" id="cpf">CPF deve conter 11 dígitos.</p>
                 <div *ngIf="cpf.invalid && formDir.submitted" class="validation-error">
-                    <p *ngIf="cpf.errors?.['required']">O cpf é obrigatório!</p>
+                    <p *ngIf="cpf.errors?.['required']">CPF é obrigatório!</p>
                 </div>
             </div>
             <div class="col-sm">
@@ -50,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/usuarios" value="Cancelar">
-        <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="Salvar">
+        <input class="btn btn-outline-danger btnOpcao" routerLink="/usuarios" value="Cancelar">
+        <input class="btn btn-outline-info btnOpcao" type="submit" value="Salvar">
     </form>
 </div>

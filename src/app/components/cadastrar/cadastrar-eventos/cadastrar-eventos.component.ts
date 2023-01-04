@@ -77,14 +77,14 @@ export class CadastrarEventosComponent {
     return this.eventoForm.get('horaFim')!;
   }
 
-   converterDatas() {
+  converterDatas() {
     let dataInicio: Date = new Date(this.eventoForm.value.dataInicio);
     this.eventoForm.value.dataInicio = dataInicio.toLocaleDateString('pt-br');
 
     let dataFim: Date = new Date(this.eventoForm.value.dataFim);
     this.eventoForm.value.dataFim = dataFim.toLocaleDateString('pt-br');
   }
-  
+
   submit() {
     if (this.eventoForm.invalid || this.tamanhoExcedido.length > 0) {
       return;
