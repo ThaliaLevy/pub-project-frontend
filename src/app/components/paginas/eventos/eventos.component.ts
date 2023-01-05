@@ -15,6 +15,7 @@ export class EventosComponent {
 
   todosOsEventos: Evento[] = [];
   eventosFiltrados: Evento[] = [];
+  isAdmin!: boolean;
   value = '';
 
   ngOnInit(): void {
@@ -22,6 +23,8 @@ export class EventosComponent {
       this.eventosFiltrados = eventosDB;
       this.todosOsEventos = eventosDB;
     })
+
+    this.isAdmin = JSON.parse(localStorage.getItem("isAdmin")!);
   }
 
   recarregarTodosOsUsuarios() {

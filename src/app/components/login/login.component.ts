@@ -5,6 +5,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Login } from 'src/app/Login';
 import { LoginService } from 'src/app/services/login.service';
 
+import { Response } from 'src/app/Response';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,9 +19,10 @@ export class LoginComponent {
   constructor(
     public dialogRef: MatDialogRef<LoginComponent>,
     private loginService: LoginService
-    ) { }
+  ) { }
 
   loginForm!: FormGroup;
+  response!: Response;
 
   fecharModal(): void {
     this.dialogRef.close();
@@ -44,8 +48,17 @@ export class LoginComponent {
       return;
     }
 
-    this.loginService.createLogin(this.loginForm.value).subscribe();
+    this.loginService.doLogin(this.loginForm.value).subscribe((item: any) => {
+      console.log(item)
+      this.response = item;
 
-    location.replace('/usuarios');
+      const helper = new JwtHelperService();
+
+      const decodedToken = helper.decodeToken(this.response.result.token);
+
+      localStorage.setItem("Token", this.response.result.token);
+      localStorage.setItem("isAdmin", decodedToken.claim);
+      localStorage.setItem("idUsuario", decodedToken.sub)
+    });
   }
 }

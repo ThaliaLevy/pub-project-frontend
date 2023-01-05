@@ -12,10 +12,19 @@
 
 <body>
   <mat-toolbar>
-      <img id="logo" src="../assets/logo.png" />
-      <div class="icones">
-      <button id="btnIconeLogin" (click)="abrirModal()"><img id="iconeLogin" src="../assets/login.png"></button>
-      </div>
+    <img id="logo" src="../assets/logo.png" />
+    <div class="icones">
+      <span *ngIf="nomeUsuarioLogado">
+        <span class="nomeUsuarioLogado">{{nomeUsuarioLogado}}</span>
+        <button class="btnIconeLogin" (click)="deslogar()"><img id="iconeLogout" src="../assets/logout.svg"></button>
+      </span>
+      <span *ngIf="!nomeUsuarioLogado">
+        <button class="btnIconeLogin" (click)="abrirModal()">
+          <span class="nomeUsuarioLogado">Login</span>
+          <img id="iconeLogin" src="../assets/login.svg">
+        </button>
+      </span>
+    </div>
   </mat-toolbar>
   <mat-sidenav-container>
     <mat-sidenav opened="true" mode="side">
@@ -24,9 +33,9 @@
       <a id="bebidas" routerLink="/bebidas">Bebidas</a> <br>
       <a id="comidas" routerLink="/comidas">Comidas</a> <br>
       <a id="eventos" routerLink="/eventos">Eventos</a> <br>
-      <a id="funcionarios" routerLink="/funcionarios">Funcionários</a> <br>
-      <a id="fornecedores" routerLink="/fornecedores">Fornecedores</a> <br>
-      <a id="usuarios" routerLink="/usuarios">Usuários</a> <br>
+      <a *ngIf="isAdmin" id="funcionarios" routerLink="/funcionarios">Funcionários</a> <br>
+      <a *ngIf="isAdmin" id="fornecedores" routerLink="/fornecedores">Fornecedores</a> <br>
+      <a *ngIf="isAdmin" id="usuarios" routerLink="/usuarios">Usuários</a> <br>
     </mat-sidenav>
     <mat-sidenav-content>
       <div id="conteudoPagina">

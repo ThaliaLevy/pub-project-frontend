@@ -5,7 +5,8 @@ a {
     transition: width 0.4s;
 }
 
-a:hover, .active {
+a:hover,
+.active {
     position: relative;
     display: inline-block;
     width: 230px;
@@ -18,7 +19,7 @@ a:hover, .active {
 mat-toolbar {
     background: linear-gradient(to right, #140408, #220d14, #1d0d11f3);
     border-bottom: 1px solid #00eeff;
-    height: 55px;
+    height: 70px;
 }
 
 mat-sidenav {
@@ -33,16 +34,16 @@ mat-sidenav {
 }
 
 mat-sidenav-content {
-    height: 1000px;
+    height: 800px;
     background-color: #140409;
     padding: 5px;
 }
 
 #logo {
     z-index: 100;
-    height: 45px;
-    margin: 0 0 0 50px;
-   
+    height: 25px;
+    margin: 0 0 0 62px;
+
 }
 
 #conteudoPagina {
@@ -51,10 +52,21 @@ mat-sidenav-content {
 }
 
 #iconeLogin {
-    height: 40px;
+    height: 32px;
+    margin-left: 10px;
 }
 
-#btnIconeLogin {
+#iconeLogout {
+    height: 24px;
+    margin-left: 10px;
+}
+
+.nomeUsuarioLogado {
+    color: white;
+    font-family: 'Inconsolata', monospace;
+}
+
+.btnIconeLogin {
     background-color: transparent;
     border: 0;
 }

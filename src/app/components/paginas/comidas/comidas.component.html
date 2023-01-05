@@ -2,7 +2,7 @@
     <h3>COMIDAS</h3>
 </div>
 <div class="row">
-    <button class="btn btn-outline-info btnMenuSuperior" routerLink="/comidas/cadastrar">
+    <button *ngIf="isAdmin" class="btn btn-outline-info btnMenuSuperior" routerLink="/comidas/cadastrar">
         Cadastrar comida
     </button>
     <mat-form-field id="inputFiltro">
@@ -32,9 +32,9 @@
                 <p class="overflow-auto"> Descrição: {{comida.descricao}}</p>
             </mat-card-content>
             <mat-card-actions>
-                <button class="btn btn-outline-info" routerLink="/comidas/editar-foto/{{comida._id}}">Alterar foto</button> <br>
-                <button class="btn btn-outline-info" routerLink="/comidas/editar/{{comida._id}}">Editar</button> <br>
-                <button class="btn btn-outline-danger" (click)="excluirComida(comida._id!)">Excluir</button> <br>
+                <button *ngIf="isAdmin" class="btn btn-outline-info" routerLink="/comidas/editar-foto/{{comida._id}}">Alterar foto</button> <br>
+                <button *ngIf="isAdmin" class="btn btn-outline-info" routerLink="/comidas/editar/{{comida._id}}">Editar</button> <br>
+                <button *ngIf="isAdmin" class="btn btn-outline-danger" (click)="excluirComida(comida._id!)">Excluir</button> <br>
             </mat-card-actions>
         </mat-card>
     </span>

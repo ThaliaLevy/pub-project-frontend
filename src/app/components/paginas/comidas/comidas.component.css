@@ -1,6 +1,6 @@
 mat-card {
     width: 250px;
-    height: 350px;
+    height: 328px;
     padding: 2px;
     margin-left: 20px;
     margin-top: 20px;
@@ -14,7 +14,7 @@ mat-card {
 
 mat-card-actions {
     margin-top: 5px;
-    margin-left: 10px;
+    margin-top: -8px;
 }
 
 img {
@@ -58,13 +58,14 @@ h4 {
 }
 
 .row {
-    margin-left: 210px;
+    margin-left: 32%;
     margin-top: 20px;
 }
 
 .btnMenuSuperior {
     width: 175px;
     height: 57px;
+    margin-left: -10%;
     font-size: 14px;
 }
 

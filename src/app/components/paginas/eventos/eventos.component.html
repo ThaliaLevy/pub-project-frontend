@@ -2,7 +2,7 @@
     <h3>EVENTOS</h3>
 </div>
 <div class="row">
-    <button class="btn btn-outline-info btnMenuSuperior" routerLink="/eventos/cadastrar">
+    <button *ngIf="isAdmin" class="btn btn-outline-info btnMenuSuperior" routerLink="/eventos/cadastrar">
         Cadastrar evento
     </button>
     <mat-form-field id="inputFiltro">
@@ -35,9 +35,9 @@
                 <p class="overflow-auto"> Descrição: {{evento.descricao}}</p>
             </mat-card-content>
             <mat-card-actions>
-                <button class="btn btn-outline-info" routerLink="/eventos/editar-foto/{{evento._id}}">Alterar foto</button> <br>
-                <button class="btn btn-outline-info" routerLink="/eventos/editar/{{evento._id}}">Editar</button> <br>
-                <button class="btn btn-outline-danger" (click)="excluirEvento(evento._id!)">Excluir</button> <br>
+                <button *ngIf="isAdmin" class="btn btn-outline-info" routerLink="/eventos/editar-foto/{{evento._id}}">Alterar foto</button> <br>
+                <button *ngIf="isAdmin" class="btn btn-outline-info" routerLink="/eventos/editar/{{evento._id}}">Editar</button> <br>
+                <button *ngIf="isAdmin" class="btn btn-outline-danger" (click)="excluirEvento(evento._id!)">Excluir</button> <br>
             </mat-card-actions>
         </mat-card>
     </span>

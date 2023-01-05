@@ -51,7 +51,6 @@ import { CadastrarUsuariosComponent } from './components/cadastrar/cadastrar-usu
 import { EditarUsuariosComponent } from './components/editar/editar-usuarios/editar-usuarios.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
 import { UsuariosComponent } from './components/paginas/usuarios/usuarios.component';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -87,7 +86,7 @@ import { AuthModule } from './auth/auth.module';
     CadastrarUsuariosComponent,
     EditarUsuariosComponent,
     FormularioUsuarioComponent,
-    UsuariosComponent
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,7 +107,6 @@ import { AuthModule } from './auth/auth.module';
     MatFormFieldModule,
     MatNativeDateModule,
     MatDialogModule, 
-    AuthModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'pt-br'}],
   bootstrap: [AppComponent]

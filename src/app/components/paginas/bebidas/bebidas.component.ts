@@ -15,6 +15,7 @@ export class BebidasComponent {
 
   todasAsBebidas: Bebida[] = [];
   bebidasFiltradas: Bebida[] = [];
+  isAdmin!: boolean;
   value = '';
 
   ngOnInit(): void {
@@ -22,6 +23,8 @@ export class BebidasComponent {
       this.bebidasFiltradas = bebidasDB;
       this.todasAsBebidas = bebidasDB;
     })
+
+    this.isAdmin = JSON.parse(localStorage.getItem("isAdmin")!);
   }
 
   recarregarTodosOsUsuarios() {
