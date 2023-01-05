@@ -29,10 +29,11 @@
   <mat-sidenav-container>
     <mat-sidenav opened="true" mode="side">
       <a id="home" routerLink="/">Home</a> <br>
-      <a id="agendamentos" routerLink="/agendamentos">Agendamentos</a> <br>
       <a id="bebidas" routerLink="/bebidas">Bebidas</a> <br>
       <a id="comidas" routerLink="/comidas">Comidas</a> <br>
       <a id="eventos" routerLink="/eventos">Eventos</a> <br>
+      <a *ngIf="!nomeUsuarioLogado" id="agendamentos" (click)="abrirModal()">Agendamentos</a> <br *ngIf="!nomeUsuarioLogado">
+      <a *ngIf="nomeUsuarioLogado" id="agendamentos" routerLink="/agendamentos">Agendamentos</a> <br>
       <a *ngIf="isAdmin" id="funcionarios" routerLink="/funcionarios">Funcionários</a> <br>
       <a *ngIf="isAdmin" id="fornecedores" routerLink="/fornecedores">Fornecedores</a> <br>
       <a *ngIf="isAdmin" id="usuarios" routerLink="/usuarios">Usuários</a> <br>

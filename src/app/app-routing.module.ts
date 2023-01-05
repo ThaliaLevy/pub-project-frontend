@@ -19,6 +19,7 @@ import { FotoEventosComponent } from './components/editar/foto-eventos/foto-even
 import { FotoFornecedoresComponent } from './components/editar/foto-fornecedores/foto-fornecedores.component';
 import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 import { AgendamentosComponent } from './components/paginas/agendamentos/agendamentos.component';
 import { BebidasComponent } from './components/paginas/bebidas/bebidas.component';
 import { ComidasComponent } from './components/paginas/comidas/comidas.component';
@@ -52,7 +53,7 @@ const routes: Routes = [
   { path: 'funcionarios/cadastrar', component: CadastrarFuncionarioComponent, canActivate: [AuthGuard] },
   { path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard] },
   { path: 'usuarios/editar/:_id', component: EditarUsuariosComponent, canActivate: [AuthGuard] },
-  { path: 'usuarios/cadastrar', component: CadastrarUsuariosComponent, canActivate: [AuthGuard] }
+  { path: 'usuarios/cadastrar', component: CadastrarUsuariosComponent },
 ];
 
 @NgModule({

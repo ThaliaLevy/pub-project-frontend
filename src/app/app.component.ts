@@ -18,7 +18,7 @@ export class AppComponent {
   rota: string = '';
   isAdmin!: boolean;
   idUsuario!: string;
-  nomeUsuarioLogado!: string;
+  nomeUsuarioLogado: string = '';
 
   constructor(
     private router: Router,
