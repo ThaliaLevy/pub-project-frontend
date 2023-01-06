@@ -8,7 +8,7 @@
     <mat-form-field id="inputFiltro">
         <mat-label>Busque um evento</mat-label>
         <input id="matInput" matInput type="text" [(ngModel)]="value" (input)="search($event)">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''" (click)="recarregarTodosOsUsuarios()">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''" (click)="recarregarTodosOsEventos()">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>

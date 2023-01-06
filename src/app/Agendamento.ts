@@ -1,4 +1,5 @@
 export interface Agendamento {
+    _id: string,
     idUsuario: string;
     idEvento: string;
     nomeUsuario?: string;

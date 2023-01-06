@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { CadastrarAgendamentoComponent } from './components/cadastrar/cadastrar-agendamento/cadastrar-agendamento.component';
 import { CadastrarBebidasComponent } from './components/cadastrar/cadastrar-bebidas/cadastrar-bebidas.component';
 import { CadastrarComidasComponent } from './components/cadastrar/cadastrar-comidas/cadastrar-comidas.component';
 import { CadastrarEventosComponent } from './components/cadastrar/cadastrar-eventos/cadastrar-eventos.component';
@@ -18,8 +19,10 @@ import { FotoComidasComponent } from './components/editar/foto-comidas/foto-comi
 import { FotoEventosComponent } from './components/editar/foto-eventos/foto-eventos.component';
 import { FotoFornecedoresComponent } from './components/editar/foto-fornecedores/foto-fornecedores.component';
 import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
+import { FormularioAgendamentosComponent } from './components/formulario-agendamentos/formulario-agendamentos.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { AgendamentosUsuarioComponent } from './components/paginas/agendamentos-usuario/agendamentos-usuario.component';
 import { AgendamentosComponent } from './components/paginas/agendamentos/agendamentos.component';
 import { BebidasComponent } from './components/paginas/bebidas/bebidas.component';
 import { ComidasComponent } from './components/paginas/comidas/comidas.component';
@@ -35,6 +38,9 @@ const routes: Routes = [
   { path: 'eventos/editar-foto/:_id', component: FotoEventosComponent, canActivate: [AuthGuard] },
   { path: 'eventos/cadastrar', component: CadastrarEventosComponent, canActivate: [AuthGuard] },
   { path: 'agendamentos', component: AgendamentosComponent },
+  { path: 'agendamentos/usuario/:_id', component: CadastrarAgendamentoComponent },
+  { path: 'agendamentos/usuario', component: AgendamentosUsuarioComponent },
+  { path: 'agendamentos/editar/:_id', component: FormularioAgendamentosComponent },
   { path: 'bebidas', component: BebidasComponent },
   { path: 'bebidas/editar/:_id', component: EditarBebidasComponent, canActivate: [AuthGuard] },
   { path: 'bebidas/editar-foto/:_id', component: FotoBebidasComponent, canActivate: [AuthGuard] },

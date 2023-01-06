@@ -186,9 +186,11 @@ export class AppComponent {
     this.isAdmin = JSON.parse(localStorage.getItem("isAdmin")!);
     this.idUsuario = localStorage.getItem("idUsuario")!;
 
-    this.usuariosService.getUsuario(this.idUsuario).subscribe((item) =>
-      this.nomeUsuarioLogado = item.nome
-    );
+    if (this.idUsuario) {
+      this.usuariosService.getUsuario(this.idUsuario).subscribe((item) =>
+        this.nomeUsuarioLogado = item.nome
+      );
+    }
   }
 
   abrirModal(): void {
@@ -197,12 +199,12 @@ export class AppComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      window.location.reload();
+      location.replace('/');
     });
   }
 
   deslogar() {
     this.loginService.doLogout();
-    window.location.reload();
+    location.replace('/');
   }
 }

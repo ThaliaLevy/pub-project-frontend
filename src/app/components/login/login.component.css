@@ -16,3 +16,8 @@ span {
 .container {
     text-align: center;
 }
+
+p {
+    color: rgba(255, 0, 0, 0.699);
+    font-weight: bolder;
+}

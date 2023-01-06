@@ -27,7 +27,7 @@ export class EventosComponent {
     this.isAdmin = JSON.parse(localStorage.getItem("isAdmin")!);
   }
 
-  recarregarTodosOsUsuarios() {
+  recarregarTodosOsEventos() {
     this.eventoService.getEventos().subscribe((eventosDB) => {
       this.eventosFiltrados = eventosDB;
       this.todosOsEventos = eventosDB;

@@ -1,1 +1,43 @@
-<p>agendamentos works!</p>
+<div class="tituloPagina">
+    <h3>AGENDAMENTOS</h3>
+</div>
+<div class="row">
+    <button class="btn btn-outline-info btnMenuSuperior" routerLink="/agendamentos/usuario">
+        Meus agendamentos
+    </button>
+    <mat-form-field id="inputFiltro">
+        <mat-label>Busque um evento</mat-label>
+        <input id="matInput" matInput type="text" [(ngModel)]="value" (input)="search($event)">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''"
+            (click)="recarregarTodosOsEventos()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div *ngIf="eventosFiltrados.length > 0; else semEventos" class="d-flex align-content-stretch flex-wrap">
+    <span *ngFor="let evento of eventosFiltrados">
+        <mat-card>
+            <mat-card-content>
+                <p *ngIf="evento.foto != ''; else semFoto">
+                    <img [src]="evento.foto">
+                </p>
+                <p>
+                    <ng-template #semFoto>
+                        <img src="https://www.documentodoestudante.com.br/assets/img/avatar.png">
+                    </ng-template>
+                </p>
+                <p>
+                    <b>{{evento.nome}}</b> <br>
+                    Data início: {{evento.dataInicio | date: 'dd/MM/yyyy' }} <br>
+                    Data final: {{evento.dataFim | date: 'dd/MM/yyyy' }} <br>
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="btn btn-outline-info" routerLink="/agendamentos/usuario/{{evento._id}}">Agendar</button> <br>
+            </mat-card-actions>
+        </mat-card>
+    </span>
+</div>
+<ng-template #semEventos>
+    <h4 class="alert alert-danger" role="alert">Não há eventos disponíveis.</h4>
+</ng-template>

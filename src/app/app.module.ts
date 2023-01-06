@@ -51,6 +51,9 @@ import { CadastrarUsuariosComponent } from './components/cadastrar/cadastrar-usu
 import { EditarUsuariosComponent } from './components/editar/editar-usuarios/editar-usuarios.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
 import { UsuariosComponent } from './components/paginas/usuarios/usuarios.component';
+import { CadastrarAgendamentoComponent } from './components/cadastrar/cadastrar-agendamento/cadastrar-agendamento.component';
+import { AgendamentosUsuarioComponent } from './components/paginas/agendamentos-usuario/agendamentos-usuario.component';
+import { FormularioAgendamentosComponent } from './components/formulario-agendamentos/formulario-agendamentos.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +90,9 @@ import { UsuariosComponent } from './components/paginas/usuarios/usuarios.compon
     EditarUsuariosComponent,
     FormularioUsuarioComponent,
     UsuariosComponent,
+    CadastrarAgendamentoComponent,
+    AgendamentosUsuarioComponent,
+    FormularioAgendamentosComponent,
   ],
   imports: [
     BrowserModule,

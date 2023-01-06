@@ -23,6 +23,7 @@ export class LoginComponent {
 
   loginForm!: FormGroup;
   response!: Response;
+  loginFalhou: boolean = false;
 
   fecharModal(): void {
     this.dialogRef.close();
@@ -48,17 +49,21 @@ export class LoginComponent {
       return;
     }
 
-    this.loginService.doLogin(this.loginForm.value).subscribe((item: any) => {
-      console.log(item)
-      this.response = item;
+    this.loginService.doLogin(this.loginForm.value).subscribe(
+      item => {
+        this.fecharModal();
+        this.response = item;
 
-      const helper = new JwtHelperService();
+        const helper = new JwtHelperService();
+        const decodedToken = helper.decodeToken(this.response.result.token);
 
-      const decodedToken = helper.decodeToken(this.response.result.token);
-
-      localStorage.setItem("Token", this.response.result.token);
-      localStorage.setItem("isAdmin", decodedToken.claim);
-      localStorage.setItem("idUsuario", decodedToken.sub)
-    });
+        localStorage.setItem("Token", this.response.result.token);
+        localStorage.setItem("isAdmin", decodedToken.claim);
+        localStorage.setItem("idUsuario", decodedToken.sub)
+      },
+      (err: any) => {
+        this.loginFalhou = true;
+      }
+    )
   }
 }

@@ -1,0 +1,28 @@
+<div class="tituloPagina">
+    <h4>AGENDAMENTO PARA EVENTO</h4>
+</div>
+<form (ngSubmit)="submit()" [formGroup]="agendamentoForm" #formDir="ngForm">
+    <div class="row">
+        <input type="hidden" formControlName="idUsuario">
+        <input type="hidden" formControlName="idEvento">
+        <div class="col-sm">
+            <mat-form-field appearance="fill">
+                <mat-label for="data">Data:</mat-label>
+                <input matInput [matDatepicker]="picker2" type="text" formControlName="data" name="data" required>
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-sm">
+            <mat-form-field>
+                <mat-label for="hora">Hora:</mat-label>
+                <input matInput type="time" formControlName="hora" required>
+            </mat-form-field>
+            <div *ngIf="hora.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="hora.errors?.['required']">Há campos vazios.</p>
+            </div>
+        </div>
+    </div>
+    <input class="btn btn-outline-danger btnOpcao" routerLink="/agendamentos" value="Cancelar">
+    <input class="btn btn-outline-info btnOpcao" type="submit" value="Concluir">
+</form>

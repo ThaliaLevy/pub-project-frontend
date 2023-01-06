@@ -1,6 +1,6 @@
 mat-card {
     width: 215px;
-    height: 255px;
+    height: 150px;
     padding: 2px;
     margin-left: 6px;
     margin-top: 10px;
@@ -12,21 +12,15 @@ mat-card {
     scroll-behavior: auto;
 }
 
-img {
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50px;
-    border: 2px solid transparent;
-    background: linear-gradient(45deg, rgb(199, 3, 173), #c326f3, #00eeff) border-box;
+mat-card-actions {
+    margin-left: 15%;
 }
 
 button {
-    width: 90px;
-    height: 33px;
-    font-size: 12px;
-    margin-left: 25%;
+    width: 60px;
+    height: 45px;
+    font-size: 11px;
+    margin-left: 5px;
 }
 
 h3 {
@@ -52,23 +46,11 @@ h4 {
     font-size: 14px;
 }
 
-.btnMenuSuperior {
-    width: 175px;
-    height: 57px;
-    margin-left: -10%;
-    font-size: 14px;
-}
-
 .row {
     margin-left: 25%;
     margin-top: 20px;
 }
 
 .d-flex {
-    margin-left: 30px;
-}
-
-.overflow-auto {
-    height: 55px;
-    margin-top: -13px;
+    margin-left: 5%;
 }

@@ -1,0 +1,38 @@
+mat-label {
+    font-family: Arial;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+form {
+    width: 650px;
+    font-family: Arial;
+    margin-top: 8%;
+    margin-left: 20%;
+    text-align: end;
+}
+
+h4 {
+    font-weight: bolder;
+    font-family: 'Inconsolata', monospace;
+    margin-top: 2%;
+}
+
+.btnOpcao {
+    width: 110px;
+    height: 45px;
+    font-size: 12px;
+    margin-left: 2%;
+    margin-bottom: 40px;
+}
+
+#uploadFoto {
+    color: white;
+    text-align: start;
+    margin-left: 2%;
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-family: 'Inconsolata', monospace;
+}

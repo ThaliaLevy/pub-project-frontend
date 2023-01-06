@@ -9,6 +9,11 @@ a {
     color: rgb(255, 255, 255);
 }
 
+.overflow-auto {
+    text-align: justify;
+    padding-right: 8px
+}
+
 .tituloPagina {
     -webkit-animation: cores 6s linear infinite;
     -moz-animation: cores 6s linear infinite;

@@ -1,7 +1,7 @@
 mat-card {
-    width: 250px;
-    height: 328px;
-    padding: 2px;
+    width: 245px;
+    height: 310px;
+    padding: 6px;
     margin-left: 20px;
     margin-top: 20px;
     background: linear-gradient(132.97deg, rgba(255, 255, 255, 0.192) 2.84%, rgba(243, 243, 243, 0.03) 99.04%);
@@ -14,7 +14,6 @@ mat-card {
 
 mat-card-actions {
     margin-left: 10px;
-    margin-top: -8px;
 }
 
 img {
@@ -74,6 +73,6 @@ h4 {
 }
 
 .overflow-auto {
-    height: 90px;
+    height: 60px;
     margin-top: -13px;
 }

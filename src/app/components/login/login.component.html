@@ -6,15 +6,22 @@
                 <mat-label for="email">E-mail:</mat-label>
                 <input matInput type="email" formControlName="email" required>
             </mat-form-field>
+            <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="email.errors?.['required']">E-mail é obrigatório!</p>
+            </div>
             <br>
             <mat-form-field>
                 <mat-label for="senha">Senha:</mat-label>
                 <input matInput type="password" formControlName="senha" required>
             </mat-form-field>
+            <div *ngIf="senha.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="senha.errors?.['required']">Senha é obrigatório!</p>
+            </div>
         </div>
         <div mat-dialog-actions>
-            <button type="submit" (click)="fecharModal()" mat-button><span>Login</span></button>
+            <button type="submit" mat-button><span>Login</span></button>
         </div>
+        <p *ngIf="loginFalhou">Verifique e-mail e senha e tente novamente</p>
         <hr>
         <h1 mat-dialog-title>Se não possui conta</h1>
         <div mat-dialog-actions>
