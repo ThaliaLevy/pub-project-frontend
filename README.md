@@ -13,9 +13,9 @@ O projeto tem como objetivo criar um front em Angular ao consumir a API https://
 <h5>Para testar o projeto</h5>
 Subir a aplicação via terminal: ng serve <br>
 Necessário também que o backend esteja rodando. <br>
-Conta usuário admin: admin@teste.com
-Conta usuário comum: comum@teste.com
-Senha (para ambas): 123
+Conta usuário admin: admin@teste.com <br>
+Conta usuário comum: comum@teste.com <br>
+Senha (para ambas): 123 <br>
 
 <h5>Sobre o sistema:</h5>
 - CRUD para Bebidas; <br>
