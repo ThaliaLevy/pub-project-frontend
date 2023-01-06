@@ -27,6 +27,7 @@ export class FormularioUsuarioComponent {
       cpf: new FormControl(this.usuarioData ? this.usuarioData.cpf : '', [Validators.required]),
       telefone: new FormControl(this.usuarioData ? this.usuarioData.telefone : '', [Validators.required]),
       email: new FormControl(this.usuarioData ? this.usuarioData.email : '', [Validators.required]),
+      isAdmin: new FormControl(this.usuarioData ? this.usuarioData._id : ''),
     });
   }
 
@@ -46,6 +47,10 @@ export class FormularioUsuarioComponent {
     return this.usuarioForm.get('email')!;
   }
 
+  get isAdmin() {
+    return this.usuarioForm.get('isAdmin')!;
+  }
+
   verificarCpf() {
     if (this.usuarioForm.value.cpf.length != 11) {
       console.log(this.usuarioForm.value.cpf.length)
@@ -62,6 +67,6 @@ export class FormularioUsuarioComponent {
 
     this.usuariosService.updateUsuario(this.usuarioData!._id!, this.usuarioForm.value).subscribe();
 
-   // location.replace('/usuarios');
+    location.replace('/usuarios');
   }
 }

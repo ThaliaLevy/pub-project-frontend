@@ -38,7 +38,10 @@
                 <p *ngIf="email.errors?.['required']">O email é obrigatório!</p>
             </div>
         </div>
-    </div>
+        <div class="col-sm">
+        <input type="checkbox" formControlName="isAdmin"><span id="perfilAdmin"> Perfil administrador</span>
+        </div>
+    </div><br>
     <input class="btn btn-outline-danger" id="btnOpcao" routerLink="/usuarios" value="Cancelar">
     <input class="btn btn-outline-info" id="btnOpcao" type="submit" value="{{btnText}}">
 </form>

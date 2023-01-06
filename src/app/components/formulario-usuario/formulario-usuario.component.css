@@ -22,3 +22,8 @@ form {
     margin-left: 2%;
     margin-top: 10px;
 }
+
+#perfilAdmin {
+    color: white;
+    font-family: 'Inconsolata', monospace;
+}
