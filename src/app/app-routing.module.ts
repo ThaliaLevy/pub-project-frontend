@@ -21,7 +21,6 @@ import { FotoFornecedoresComponent } from './components/editar/foto-fornecedores
 import { FotoFuncionarioComponent } from './components/editar/foto-funcionario/foto-funcionario.component';
 import { FormularioAgendamentosComponent } from './components/formulario-agendamentos/formulario-agendamentos.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
 import { AgendamentosUsuarioComponent } from './components/paginas/agendamentos-usuario/agendamentos-usuario.component';
 import { AgendamentosComponent } from './components/paginas/agendamentos/agendamentos.component';
 import { BebidasComponent } from './components/paginas/bebidas/bebidas.component';

@@ -199,7 +199,7 @@ export class AppComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      location.replace('/');
+      window.location.reload();
     });
   }
 
@@ -207,4 +207,4 @@ export class AppComponent {
     this.loginService.doLogout();
     location.replace('/');
   }
-}
+}  
