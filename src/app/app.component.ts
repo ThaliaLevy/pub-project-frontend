@@ -47,6 +47,7 @@ export class AppComponent {
             eventos!.classList.remove('active');
             funcionarios!.classList.remove('active');
             fornecedores!.classList.remove('active');
+            usuarios!.classList.remove('active');
           }
             break;
           case '/agendamentos': {
