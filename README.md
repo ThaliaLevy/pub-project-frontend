@@ -4,11 +4,18 @@
 O projeto tem como objetivo criar um front em Angular ao consumir a API https://git.gft.com/cogv/pub/-/tree/master. <br>
 
 <h5>Tecnologias utilizadas:</h5>
-- Node v16.17.0; <br>
-- Angular; <br>
-- Angular Material v15.0.4; <br>
+- Node v16.17.0 -> Download do Node: https://nodejs.org/en/download/ <br>
+- Angular -> No terminal: npm install -g @angular/cli <br>
+- Angular Material v15.0.4 -> No terminal: ng add @angular/material <br>
 - Bootstrap v4; <br>
 - Auth Guard. <br>
+
+<h5>Para testar o projeto</h5>
+Subir a aplicação via terminal: ng serve <br>
+Necessário também que o backend esteja rodando. <br>
+Conta usuário admin: admin@teste.com
+Conta usuário comum: comum@teste.com
+Senha (para ambas): 123
 
 <h5>Sobre o sistema:</h5>
 - CRUD para Bebidas; <br>
