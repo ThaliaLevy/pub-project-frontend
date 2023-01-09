@@ -1,0 +1,1274 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "PUBManagement",
+        "version": "1.0.0",
+        "description": "Uma api para gerenciamento de informações e agendamentos. Serviço construido com foco em Pubs's, bares e restaurantes"
+    },
+
+    "paths": {
+        "/usuarios": {
+            "post": {
+                "tags": ["Usuarios"],
+                "summary": "Cadastra um usuário",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Usuarios"
+                            },
+                            "examples": {
+                                "usuario": {
+                                    "value": {
+                                        "nome": "Arcenio",
+                                        "cpf": "33333333333",
+                                        "telefone": "11988886666",
+                                        "email": "arcenio@gmail.com",
+                                        "senha": "arce123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Usuarios"],
+                "summary": "Lista os usuários do banco",
+                "security": [{ "bearerAuth": [] }],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/usuarios/{id}": {
+            "get": {
+                "tags": ["Usuarios"],
+                "summary": "Busca um usuário no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do usuário que deseja buscar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Usuarios"],
+                "summary": "Atualiza um usuário",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do usuário que deseja atualizar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Usuarios"
+                            },
+                            "examples": {
+                                "usuario": {
+                                    "value": {
+                                        "nome": "Arcenio",
+                                        "cpf": "33333333333",
+                                        "telefone": "11988886666",
+                                        "email": "arcenio@gmail.com",
+                                        "senha": "arce123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Usuarios"],
+                "summary": "Exclui um usuário no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do usuário que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/usuarios/isadmin/{id}": {
+            "put": {
+                "tags": ["Usuarios"],
+                "summary": "Atualiza um usuário dando privilégios de administrador",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do usuário que deseja dar privilégios de administrador",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/funcionarios": {
+            "post": {
+                "tags": ["Funcionarios"],
+                "summary": "Cadastra um funcionario",
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Funcionarios"
+                            },
+                            "examples": {
+                                "funcionario": {
+                                    "value": {
+                                        "nome": "Renato Pereira",
+                                        "foto": "https://randomuser.me/api/portraits/men/6.jpg",
+                                        "idade": 42,
+                                        "cargo": "Barman",
+                                        "naturalidade": "Salvador",
+                                        "anoAdmissao": 2019,
+                                        "hobbie": "tocar violão e adora juntar os amigos para bater um papo"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Funcionarios"],
+                "summary": "Lista os funcionarios do banco",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/funcionarios/{id}": {
+            "get": {
+                "tags": ["Funcionarios"],
+                "summary": "Busca um funcionario no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do funcionario que deseja buscar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Funcionarios"],
+                "summary": "Atualiza um funcionario",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do funcionario que deseja atualizar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Funcionarios"
+                            },
+                            "examples": {
+                                "funcionario": {
+                                    "value": {
+                                        "nome": "Renato Pereira",
+                                        "foto": "https://randomuser.me/api/portraits/men/6.jpg",
+                                        "idade": 42,
+                                        "cargo": "Barman",
+                                        "naturalidade": "Salvador",
+                                        "anoAdmissao": 2019,
+                                        "hobbie": "tocar violão e adora juntar os amigos para bater um papo"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Funcionarios"],
+                "summary": "Exclui um funcionario no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do funcionario que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/comidas": {
+            "post": {
+                "tags": ["Comidas"],
+                "summary": "Cadastra uma comida",
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Comidas"
+                            },
+                            "examples": {
+                                "comidas": {
+                                    "value": {
+                                        "nome": "Mandioca Frita",
+                                        "foto": "https://3wftqo2m2mls1wr1c62cv1x6-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/image12-2.jpg",
+                                        "descricao": "Nossas deliciosas mandiocas fritas são sequinhas, crocantes e servidas em porções generosas",
+                                        "preco": 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Comidas"],
+                "summary": "Lista as comidas do banco",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/comidas/{id}": {
+            "get": {
+                "tags": ["Comidas"],
+                "summary": "Busca uma comida no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da comida que deseja buscar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Comidas"],
+                "summary": "Atualiza uma comida",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da comida que deseja atualizar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Comidas"
+                            },
+                            "examples": {
+                                "comidas": {
+                                    "value": {
+                                        "nome": "Mandioca Frita",
+                                        "foto": "https://3wftqo2m2mls1wr1c62cv1x6-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/image12-2.jpg",
+                                        "descricao": "Nossas deliciosas mandiocas fritas são sequinhas, crocantes e servidas em porções generosas",
+                                        "preco": 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Comidas"],
+                "summary": "Exclui uma comida no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da comida que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/bebidas": {
+            "post": {
+                "tags": ["Bebidas"],
+                "summary": "Cadastra uma bebida",
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Bebidas"
+                            },
+                            "examples": {
+                                "bebida": {
+                                    "value": {
+                                        "nome": "Mojito",
+                                        "foto": "https://www.thecocktaildb.com/images/media/drink/rxtqps1478251029.jpg",
+                                        "descricao": "Mojito é um coquetel à base de rum branco originário de Cuba. Esse coquetel com mais de 100 anos não tem sua origem tão bem documentada quanto o daiquiri ou a cuba-libre. Sabe-se que floresceu na noite de Havana usando ingredientes nativos do Caribe",
+                                        "preco": 8
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Bebidas"],
+                "summary": "Lista as bebidas do banco",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/bebidas/{id}": {
+            "get": {
+                "tags": ["Bebidas"],
+                "summary": "Busca uma bebida no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da bebida que deseja buscar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Bebidas"],
+                "summary": "Atualiza uma bebida",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da bebida que deseja atualizar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Bebidas"
+                            },
+                            "examples": {
+                                "comidas": {
+                                    "value": {
+                                        "nome": "Mojito",
+                                        "foto": "https://www.thecocktaildb.com/images/media/drink/rxtqps1478251029.jpg",
+                                        "descricao": "Mojito é um coquetel à base de rum branco originário de Cuba. Esse coquetel com mais de 100 anos não tem sua origem tão bem documentada quanto o daiquiri ou a cuba-libre. Sabe-se que floresceu na noite de Havana usando ingredientes nativos do Caribe",
+                                        "preco": 8
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Bebidas"],
+                "summary": "Exclui uma bebida no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da bebida que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/fornecedores": {
+            "post": {
+                "tags": ["Fornecedores"],
+                "summary": "Cadastra um fornecedor",
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Fornecedores"
+                            },
+                            "examples": {
+                                "bebida": {
+                                    "value": {
+                                        "nome": "White Horse",
+                                        "foto": "https://cf.shopee.com.br/file/12c692122e5d3088baf561655513dc56",
+                                        "descricao": "O White Horse é um whisky composto por mais de 35 maltes, uma das mais elevadas proporções de maltes nos scotch whiskies. Assim como Logan, também desenvolvido por Peter Mackie, seus principais maltes são Lagavulim, Glen Elgin e Craigellachie. White Horse foi um dos primeiros scoth a serem introduzidos no Brasil, e traz até hoje o mesmo sabor rico e único, e a mesma qualidade, aqui e no mundo inteiro"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Fornecedores"],
+                "summary": "Lista os fornecedores do banco",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/fornecedores/{id}": {
+            "get": {
+                "tags": ["Fornecedores"],
+                "summary": "Busca um fornecedor no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do fornecedor que deseja buscar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Fornecedores"],
+                "summary": "Atualiza um fornecedor",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do fornecedor que deseja atualizar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Fornecedores"
+                            },
+                            "examples": {
+                                "fornecedores": {
+                                    "value": {
+                                        "nome": "White Horse",
+                                        "foto": "https://cf.shopee.com.br/file/12c692122e5d3088baf561655513dc56",
+                                        "descricao": "O White Horse é um whisky composto por mais de 35 maltes, uma das mais elevadas proporções de maltes nos scotch whiskies. Assim como Logan, também desenvolvido por Peter Mackie, seus principais maltes são Lagavulim, Glen Elgin e Craigellachie. White Horse foi um dos primeiros scoth a serem introduzidos no Brasil, e traz até hoje o mesmo sabor rico e único, e a mesma qualidade, aqui e no mundo inteiro"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Fornecedores"],
+                "summary": "Exclui um fornecedor no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do fornecedor que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/eventos": {
+            "post": {
+                "tags": ["Eventos"],
+                "summary": "Cadastra um evento",
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Eventos"
+                            },
+                            "examples": {
+                                "evento": {
+                                    "value": {
+                                        "nome": "Happy Hour PUB Programmer",
+                                        "foto": "https://img.freepik.com/fotos-premium/amigos-multiculturais-tirando-selfie-no-restaurante-chique-do-pub-conceito-de-estilo-de-vida-com-jovens-se-divertindo-juntos-no-happy-hour-no-cafe-da-calcada-filtro-vivido-com-foco-no-cara-central_101731-1487.jpg?w=2000",
+                                        "descricao": "Venha com seus amigos fazer um happy hour conosco, estamos te esperando!!",
+                                        "dataInicio": "25/02/2022",
+                                        "dataFim": "25/12/2022",
+                                        "horaInicio": "17:00",
+                                        "horaFim": "23:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Eventos"],
+                "summary": "Lista os eventos do banco",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/eventos/{id}": {
+            "get": {
+                "tags": ["Eventos"],
+                "summary": "Busca um evento no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do evento que deseja buscar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Eventos"],
+                "summary": "Atualiza um evento",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do evento que deseja atualizar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Eventos"
+                            },
+                            "examples": {
+                                "eventos": {
+                                    "value": {
+                                        "nome": "Happy Hour PUB Programmer",
+                                        "foto": "https://img.freepik.com/fotos-premium/amigos-multiculturais-tirando-selfie-no-restaurante-chique-do-pub-conceito-de-estilo-de-vida-com-jovens-se-divertindo-juntos-no-happy-hour-no-cafe-da-calcada-filtro-vivido-com-foco-no-cara-central_101731-1487.jpg?w=2000",
+                                        "descricao": "Venha com seus amigos fazer um happy hour conosco, estamos te esperando!!",
+                                        "dataInicio": "25/02/2022",
+                                        "dataFim": "25/12/2022",
+                                        "horaInicio": "17:00",
+                                        "horaFim": "23:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Eventos"],
+                "summary": "Exclui um evento no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do evento que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/agendamentos": {
+            "post": {
+                "tags": ["Agendamentos"],
+                "summary": "Agenda a participação de um usuário em um evento",
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Agendamentos"
+                            },
+                            "examples": {
+                                "agendamentos": {
+                                    "value": {
+                                        "idUsuario": "630fa684b393922e42386bad",
+                                        "idEvento": "63124ad22d6a6619e1a79b8d",
+                                        "data": "24/07/2022",
+                                        "hora": "13:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Agendamentos"],
+                "summary": "Lista todos os agendamentos do banco",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        
+        "/agendamentos/usuario/{id}": {
+            "get": {
+                "tags": ["Agendamentos"],
+                "summary": "Busca agendamentos do usuário",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do usuário que deseja buscar os agendamentos",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/agendamentos/evento/{id}": {
+            "get": {
+                "tags": ["Agendamentos"],
+                "summary": "Busca agendamentos para o evento",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do evento que deseja buscar os agendamentos",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/agendamentos/data/": {
+            "get": {
+                "tags": ["Agendamentos"],
+                "summary": "Busca agendamentos por data",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "query",
+                        "description": "Data que deseja buscar os agendamentos. Ex: 25/05/2022",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/agendamentos/hora/": {
+            "get": {
+                "tags": ["Agendamentos"],
+                "summary": "Busca agendamentos por hora",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "hora",
+                        "in": "query",
+                        "description": "Horário que deseja buscar os agendamentos. Ex: 13:00",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+
+        "/agendamentos/{id}": {
+            "put": {
+                "tags": ["Agendamentos"],
+                "summary": "Atualiza agendamentos",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do agendamento que deseja atualizar.",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Agendamentos"
+                            },
+                            "examples": {
+                                "agendamentos": {
+                                    "value": {
+                                        "data": "24/07/2022",
+                                        "hora": "13:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+
+            "delete": {
+                "tags": ["Agendamentos"],
+                "summary": "Exclui um agendamento no banco",
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do agendamento que deseja excluir",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+
+        },
+    
+        "/login": {
+            "post": {
+                "tags": ["Login"],
+                "summary": "Gera token para acesso ao sistema",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            },
+                            "examples": {
+                                "login": {
+                                    "value": {
+                                        "email": "arcenio@gmail.com",
+                                        "senha": "arce12345"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+    },
+
+    "components": {
+        "schemas": {
+            "Usuarios": {
+                "properties": {
+                    "nome": { "type": "string" },
+                    "cpf": { "type": "string" },
+                    "telefone": { "type": "string" },
+                    "email": { "type": "string" },
+                    "senha": { "type": "string" }
+                }
+            },
+            "Agendamentos": {
+                "properties": {
+                    "idUsuario": { "type": "string" },
+                    "idEvento": { "type": "string" },
+                    "data": { "type": "string" },
+                    "hora": { "type": "string" }
+                }
+            },
+            "Login": {
+                "properties": {
+                    "email": { "type": "string" },
+                    "senha": { "type": "string" }
+                }
+            },
+            "Funcionarios": {
+                "properties": {
+                    "nome": { "type": "string" },
+                    "foto": { "type": "string" },
+                    "idade": { "type": "number" },
+                    "cargo": { "type": "string" },
+                    "naturalidade": { "type": "string" },
+                    "anoAdmissao": { "type": "number" },
+                    "hobbie": { "type": "string" }
+                }
+            },
+            "Comidas": {
+                "properties": {
+                    "nome": { "type": "string" },
+                    "foto": { "type": "string" },
+                    "descricao": { "type": "string" },
+                    "preco": { "type": "number" }
+                }
+            },
+            "Bebidas": {
+                "properties": {
+                    "nome": { "type": "string" },
+                    "foto": { "type": "string" },
+                    "descricao": { "type": "string" },
+                    "preco": { "type": "number" }
+                }
+            },
+            "Fornecedores": {
+                "properties": {
+                    "nome": { "type": "string" },
+                    "foto": { "type": "string" },
+                    "descricao": { "type": "string" }
+                }
+            },
+            "Eventos": {
+                "properties": {
+                    "nome": { "type": "string" },
+                    "foto": { "type": "string" },
+                    "descricao": { "type": "string" },
+                    "dataInicio": { "type": "date" },
+                    "dataFim": { "type": "date" },
+                    "horaInicio": { "type": "string" },
+                    "horaFim": { "type": "string" }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+                "in": "header"
+            }
+        },
+        "security": {
+            "bearerAuth": []
+        }
+    }
+}
