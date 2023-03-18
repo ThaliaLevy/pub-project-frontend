@@ -3,14 +3,6 @@
 <h5>Breve descrição:</h5>
 O projeto tem como objetivo criar um front em Angular ao consumir a API Pub (Projeto backend de autoria do https://github.com/ArcenioSouza). <br>
 
-<h5>Tecnologias utilizadas:</h5>
-- Node v16.17.0 -> Download do Node: https://nodejs.org/en/download/ <br>
-- Angular -> No terminal: <code>npm install -g @angular/cli</code> <br>
-- Angular Material v15.0.4 -> No terminal: <code>ng add @angular/material</code> <br>
-- Bootstrap v4; <br>
-- Angular JWT; <br>
-- Auth Guard. <br>
-
 <h5>Para testar o projeto</h5>
 1. <code>npm install</code> para instalar as dependências <br>
 2. Subir a aplicação via terminal: <code>ng serve</code>  (porta padrão: http://localhost:4200/) <br>
@@ -36,3 +28,18 @@ Senha (para ambas): 123 <br>
 - Tela para visualização de agendamentos realizados pelo usuário logado; <br>
 - Banco populado. <br>
 
+<h5>Tecnologias utilizadas:</h5>
+- Node v16.17.0 -> Download do Node: https://nodejs.org/en/download/ <br>
+- Angular -> No terminal: <code>npm install -g @angular/cli</code> <br>
+- Angular Material v15.0.4 -> No terminal: <code>ng add @angular/material</code> <br>
+- Bootstrap v4; <br>
+- Angular JWT; <br>
+- Auth Guard. <br>
+<br>
+<p>
+<img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/256/external-typescript-an-open-source-programming-language-developed-and-maintained-by-microsoft-logo-shadow-tal-revivo.png" alt="typescript" height="27px"> 
+<img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/256/external-bootstrap-a-free-and-open-source-css-framework-logo-shadow-tal-revivo.png" alt="bootstrap" height="28px"> 
+<img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/256/external-nodejs-is-an-open-source-cross-platform-javascript-run-time-environment-logo-shadow-tal-revivo.png" alt="node" height="30px"> 
+<img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/256/external-angular-a-typescript-based-open-source-web-application-framework-logo-color-tal-revivo.png" alt="angular" height="30px"> 
+
+</p>
